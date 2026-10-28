@@ -57,7 +57,7 @@ export default function Issued() {
 
       <div className="relative space-y-3">
         <ButtonLink href="/app/home">{t("goHome")}</ButtonLink>
-        <ButtonLink href="/app/home" variant="secondary">
+        <ButtonLink href="/app/vault" variant="secondary">
           <Icon name="family" size={20} />
           {t("share")}
         </ButtonLink>

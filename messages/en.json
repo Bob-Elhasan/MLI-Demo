@@ -32,7 +32,15 @@
     "camera": "Camera",
     "cameraHint": "The ID scan and selfie use this laptop's webcam. Everything returned is mocked.",
     "site": "Website",
-    "connect": "Landing Page"
+    "connect": "Landing Page",
+    "scenario": "Fast Forward",
+    "scenarioHint": "Jump the policy to the moments the app is built around.",
+    "onTrack": "On Track",
+    "dueSoon": "Payment Due",
+    "grace": "Missed Payment",
+    "lapsed": "Policy Lapsed",
+    "checkIn": "6-Month Check-In",
+    "anniversary": "Policy Anniversary"
   },
   "welcome": {
     "title": "Protection That Fits In Your Pocket",
@@ -123,8 +131,8 @@
       "line": "If something happens to you, your family gets a lump sum.",
       "emotional": "So they're never left figuring it out alone.",
       "bullet1": "Fixed monthly premium",
-      "bullet2": "Cover from EGP 100,000",
-      "bullet3": "No medical exam up to EGP 1M"
+      "bullet2": "Cover sized to your family",
+      "bullet3": "Simple health questions, no clinic visit"
     },
     "maashBokra": {
       "name": "Maash Bokra",
@@ -203,12 +211,384 @@
   },
   "home": {
     "greeting": "Hi, {name}",
-    "active": "Active",
+    "covered": "You're covered",
+    "coverValue": "{product} · {cover}",
     "nextPayment": "Next payment",
-    "cover": "Cover",
-    "nextTitle": "Coming Next In The Build",
-    "nextBody": "My Policy, Pay Installment, Claims, Goals, Family Vault, Life Event Check-In and Notifications are the next slice.",
+    "dueIn": "{days, plural, =0 {Due today} =1 {Due tomorrow} other {Due in # days}}",
+    "scheduledFor": "Collected on {date}, {days} days after payday",
+    "payNow": "Pay Now",
+    "payEarly": "Pay Early",
+    "graceTitle": "You Missed A Payment",
+    "graceBody": "You're still covered until {date}. Pay {amount} to keep it that way.",
+    "lapsedTitle": "Your Cover Is Paused",
+    "lapsedBody": "Two payments were missed. Reinstate in one tap with {amount}, no new health questions.",
+    "reinstate": "Reinstate Cover",
+    "checkInTitle": "Anything Changed In The Last 6 Months?",
+    "checkInBody": "Married, a new baby, a new job? Your cover should keep up.",
+    "checkInCta": "Take The 30-Second Check-In",
+    "anniversaryTitle": "One Year Covered",
+    "anniversaryBody": "Your annual statement is ready. Take a minute to review who your beneficiaries are.",
+    "anniversaryCta": "Review My Year",
+    "forYou": "Suggested For You",
+    "goals": "Your Goals",
+    "goalsEmpty": "Track what you're protecting: a wedding, school fees, a car.",
+    "addGoal": "Add A Goal",
+    "viewAll": "View all",
+    "active": "Active",
     "empty": "No policy yet",
-    "emptyCta": "Find Cover"
+    "emptyBody": "Get covered in a few minutes, straight from your phone.",
+    "emptyCta": "Find Cover",
+    "claims": "Claim in progress",
+    "family": "Family Vault",
+    "familyBody": "Name your beneficiaries so the right people are protected.",
+    "familyCta": "Add Beneficiaries"
+  },
+  "tabs": {
+    "home": "Home",
+    "policy": "Policy",
+    "goals": "Goals",
+    "vault": "Vault",
+    "more": "More"
+  },
+  "policy": {
+    "title": "My Policy",
+    "status": "Status",
+    "active": "Active",
+    "grace": "In grace period",
+    "lapsed": "Paused",
+    "number": "Policy number",
+    "cover": "Cover",
+    "premium": "Premium",
+    "term": "Term",
+    "endsOn": "Ends {date}",
+    "issued": "Issued",
+    "nextPayment": "Next payment",
+    "insured": "Insured",
+    "documents": "Documents",
+    "timeline": "Timeline",
+    "upcoming": "Coming up",
+    "past": "So far",
+    "makeClaim": "Make A Claim",
+    "payments": "Payments",
+    "docs": {
+      "policyContract": "Policy contract",
+      "policySchedule": "Policy schedule",
+      "nationalId": "National ID",
+      "keyFacts": "Key facts summary",
+      "receipt": "Receipt {number}"
+    },
+    "events": {
+      "verified": "Identity verified",
+      "issued": "Policy issued and signed",
+      "paid": "Premium paid",
+      "reinstated": "Cover reinstated",
+      "beneficiary": "Beneficiary invited",
+      "claim": "Claim submitted",
+      "checkIn": "Life event check-in",
+      "nextPayment": "Next premium",
+      "sixMonth": "6-month check-in",
+      "annual": "Annual statement and beneficiary review",
+      "renewal": "Policy term ends"
+    },
+    "viewDoc": "View",
+    "docTitle": "Policy Schedule",
+    "docSigned": "Signed electronically",
+    "docClose": "Close",
+    "docNote": "Demo document. The issued contract will come from Misr Life's policy system."
+  },
+  "pay": {
+    "title": "Payments",
+    "nextDue": "Next payment",
+    "payWith": "Pay with",
+    "change": "Change",
+    "oneTap": "Pay {amount}",
+    "confirmFace": "Confirm with Face unlock",
+    "looking": "Looking for your face",
+    "confirmed": "Confirmed",
+    "processing": "Processing payment",
+    "schedule": "Your Schedule",
+    "scheduleHint": "Every premium lands {days} days after your payday, on day {day}.",
+    "changePayday": "Change payday",
+    "paused": "Paused",
+    "pauseTitle": "Need A Breather?",
+    "pauseBody": "Pause up to 2 premiums when money is tight. Your cover continues and the paused months move to the end of your term.",
+    "pauseOne": "Pause 1 month",
+    "pauseTwo": "Pause 2 months",
+    "pauseConfirm": "Pause Premiums",
+    "pauseActive": "{count, plural, =1 {Next premium paused} other {Next # premiums paused}}",
+    "pauseUndo": "Resume Now",
+    "pauseTerms": "Subject to your policy terms. Available once per policy year.",
+    "history": "History",
+    "graceTitle": "Missed On {date}",
+    "graceBody": "You have {days} days of grace left. Your family is still covered until {end}.",
+    "lapsedTitle": "Cover Paused Since {date}",
+    "lapsedBody": "Pay the {count} missed premiums to switch your cover back on today. No new health questions within 90 days.",
+    "reinstate": "Reinstate For {amount}",
+    "receiptTitle": "Payment Received",
+    "receiptReinstated": "You're Covered Again",
+    "receiptBody": "Thanks. Your policy is paid up and your next premium is on {date}.",
+    "receiptNumber": "Receipt",
+    "amount": "Amount",
+    "method": "Method",
+    "date": "Date",
+    "policy": "Policy",
+    "streak": "{count, plural, =1 {First premium on time} other {# premiums on time}}",
+    "streakBody": "On-time payments keep your cover strong.",
+    "done": "Done",
+    "methods": {
+      "card": "Card ending 4242",
+      "meeza": "Meeza ending 4242",
+      "instapay": "InstaPay",
+      "fawry": "Fawry reference"
+    }
+  },
+  "claims": {
+    "title": "Claims",
+    "intro": "Tell us what happened and upload your documents. Misr Life's claims team reviews every claim and you can follow each step here.",
+    "start": "Start A Claim",
+    "none": "No claims. We hope it stays that way.",
+    "newTitle": "Start A Claim",
+    "type": "What is the claim for?",
+    "types": {
+      "death": "Death benefit",
+      "disability": "Total permanent disability",
+      "illness": "Critical illness",
+      "maturity": "Maturity or surrender"
+    },
+    "typeHint": {
+      "death": "For beneficiaries of the insured person",
+      "disability": "If the insured can no longer work",
+      "illness": "A diagnosed condition covered by your policy",
+      "maturity": "Your savings at the end of the term"
+    },
+    "eventDate": "Date of event",
+    "description": "What happened?",
+    "descriptionHint": "A few lines are enough",
+    "documents": "Documents",
+    "upload": "Upload",
+    "uploaded": "Added",
+    "docs": {
+      "death": [
+        "Death certificate",
+        "Claimant's national ID",
+        "Medical report"
+      ],
+      "disability": [
+        "Medical committee report",
+        "Insured's national ID",
+        "Employer letter"
+      ],
+      "illness": [
+        "Diagnosis report",
+        "Insured's national ID",
+        "Hospital records"
+      ],
+      "maturity": [
+        "Insured's national ID",
+        "Bank account details"
+      ]
+    },
+    "submit": "Submit Claim",
+    "submitting": "Sending your claim",
+    "reference": "Reference",
+    "stages": [
+      "Submitted",
+      "Documents checked",
+      "Under review",
+      "Decision",
+      "Paid"
+    ],
+    "stageHint": [
+      "We have your claim.",
+      "We're checking your documents are complete.",
+      "Misr Life's claims team is reviewing it.",
+      "You'll get the decision here and by SMS.",
+      "Payment sent to your account."
+    ],
+    "reviewNote": "Claims are reviewed and decided by Misr Life's claims team. This app tracks the status, it doesn't decide claims.",
+    "simulate": "Simulate next step",
+    "submittedOn": "Submitted {date}"
+  },
+  "goals": {
+    "title": "Goals",
+    "intro": "Track what you're working towards. Your money stays in your own accounts, MLI Connect only keeps score.",
+    "add": "Add A Goal",
+    "empty": "Pick something you're protecting.",
+    "kinds": {
+      "marriage": "Wedding",
+      "school": "Kids' school",
+      "car": "A car",
+      "home": "A home",
+      "custom": "Something else"
+    },
+    "name": "Goal name",
+    "target": "Target",
+    "saved": "Saved so far",
+    "savedHint": "What you've put aside, anywhere. We don't hold it.",
+    "by": "By {year}",
+    "save": "Save Goal",
+    "delete": "Delete",
+    "update": "Update Saved Amount",
+    "progress": "{pct}% there",
+    "left": "{amount} to go",
+    "perMonth": "About {amount} a month gets you there",
+    "policyTool": "How Your Policy Helps",
+    "toolProtection": "If something happens to you, your {cover} cover means this goal still happens.",
+    "toolSavings": "Your {amount} monthly Maash Bokra saving builds towards the long term alongside this goal.",
+    "nudge": "Weekly nudge",
+    "nudgeHint": "A gentle reminder to update your progress. Off by default.",
+    "targetDate": "Target year"
+  },
+  "vault": {
+    "title": "Family Vault",
+    "intro": "Keep the documents and people that matter in one place.",
+    "beneficiaries": "Beneficiaries",
+    "beneficiariesEmpty": "Right now your policy pays your legal heirs. Name people to make your wishes clear.",
+    "add": "Add Beneficiary",
+    "name": "Full name",
+    "relation": "Relationship",
+    "relations": {
+      "spouse": "Spouse",
+      "child": "Child",
+      "parent": "Parent",
+      "sibling": "Sibling",
+      "other": "Other"
+    },
+    "phone": "Mobile number",
+    "share": "Share",
+    "sharesTotal": "Shares total {total}%",
+    "sharesOk": "Shares add up to 100%",
+    "save": "Save",
+    "invite": "Invite To View",
+    "inviteHint": "They'll see the policy details, never your payments or documents.",
+    "invited": "Invite sent",
+    "accepted": "Can view policy",
+    "remove": "Remove",
+    "documents": "Documents",
+    "addDoc": "Add Document",
+    "docAdded": "Added {date}",
+    "parentsTitle": "Protect Your Parents",
+    "parentsBody": "Send your parents a link to get covered in MLI Connect. Their policy stays theirs.",
+    "parentsCta": "Share The Link",
+    "copied": "Link copied"
+  },
+  "checkIn": {
+    "title": "Anything Changed?",
+    "body": "Pick everything that happened in the last 6 months. It takes 30 seconds.",
+    "events": {
+      "married": "Got married",
+      "baby": "New baby",
+      "newJob": "New job or raise",
+      "home": "Bought a home",
+      "school": "Kids starting school",
+      "nothing": "Nothing changed"
+    },
+    "submit": "See What This Means",
+    "resultsTitle": "Here's What We'd Suggest",
+    "resultsNothing": "All good. We'll check in again in 6 months.",
+    "cards": {
+      "married": {
+        "title": "Protect Your Partner Too",
+        "body": "A Family Protection Plan covers both of you, with education cover for later.",
+        "cta": "Explore Family Protection"
+      },
+      "baby": {
+        "title": "Raise Your Cover For The New Arrival",
+        "body": "Families usually aim for cover worth several years of income. Yours is {cover}.",
+        "cta": "Increase My Cover"
+      },
+      "newJob": {
+        "title": "Put Some Of The Raise To Work",
+        "body": "Start Maash Bokra from {amount} a month, alongside your current policy.",
+        "cta": "Explore Maash Bokra"
+      },
+      "home": {
+        "title": "Keep The Home If Something Happens",
+        "body": "Loan protection pays off the mortgage so your family keeps the keys.",
+        "cta": "Tell Me More"
+      },
+      "school": {
+        "title": "Lock In The School Fees",
+        "body": "Education cover keeps the fees paid whatever happens.",
+        "cta": "Explore Family Protection"
+      }
+    },
+    "later": "Not Now",
+    "beneficiaryNudge": "Life changed, so review your beneficiaries too."
+  },
+  "notifications": {
+    "title": "Notifications",
+    "inbox": "Inbox",
+    "rhythm": "Rhythm",
+    "rhythmIntro": "MLI Connect only speaks up when it matters. This is everything we'll ever send you.",
+    "empty": "You're all caught up.",
+    "markRead": "Mark all read",
+    "cadence": {
+      "weekly": "Weekly",
+      "monthly": "Monthly",
+      "halfYear": "Every 6 months",
+      "yearly": "Yearly",
+      "once": "When it happens"
+    },
+    "rhythmItems": {
+      "weekly": "Goal nudge, only if you turn it on",
+      "monthly": "Payment reminder 3 days before, receipt the moment it clears",
+      "halfYear": "Life event check-in",
+      "yearly": "Annual statement, renewal and beneficiary review",
+      "once": "Claim updates at every step, grace period alerts"
+    },
+    "items": {
+      "paymentDue": {
+        "title": "Premium Due In 3 Days",
+        "body": "{amount} will be collected on {date} with your saved card."
+      },
+      "paid": {
+        "title": "Payment Received",
+        "body": "Receipt {number}. You're covered for another month."
+      },
+      "grace": {
+        "title": "You Missed A Payment",
+        "body": "Still covered until {date}. Pay in one tap whenever you're ready."
+      },
+      "lapsed": {
+        "title": "Your Cover Is Paused",
+        "body": "Reinstate in one tap, no new health questions."
+      },
+      "checkIn": {
+        "title": "Anything Changed?",
+        "body": "It's been 6 months. A 30-second check-in keeps your cover right."
+      },
+      "anniversary": {
+        "title": "Your Annual Statement Is Ready",
+        "body": "One year covered. Review your beneficiaries while you're there."
+      },
+      "claim": {
+        "title": "Claim {ref} Updated",
+        "body": "Status: {stage}."
+      },
+      "welcome": {
+        "title": "Welcome To MLI Connect",
+        "body": "Your policy {number} is active."
+      },
+      "invite": {
+        "title": "{name} Accepted Your Invite",
+        "body": "They can now view your policy details."
+      }
+    }
+  },
+  "more": {
+    "title": "More",
+    "account": "Account",
+    "payments": "Payments",
+    "claims": "Claims",
+    "checkIn": "Life event check-in",
+    "notifications": "Notifications",
+    "settings": "Settings",
+    "language": "Language",
+    "faceUnlock": "Face unlock",
+    "help": "Help and contact",
+    "helpBody": "Call 19XXX or chat with us, 9am to 9pm.",
+    "signOut": "Sign Out",
+    "version": "MLI Connect demo build"
   }
 }

@@ -18,7 +18,8 @@ function merge(base: Messages, over: Messages): Messages {
   for (const [key, value] of Object.entries(over)) {
     const current = out[key];
     out[key] =
-      value && typeof value === "object" && current && typeof current === "object"
+      // Lists (claim stages, document checklists) are replaced whole, never merged index by index
+      value && typeof value === "object" && !Array.isArray(value) && current && typeof current === "object" && !Array.isArray(current)
         ? merge(current as Messages, value as Messages)
         : value;
   }

@@ -149,3 +149,11 @@ input[type="range"]::-moz-range-thumb {
   background: var(--color-paper);
   box-shadow: 0 0 0 2px var(--color-accent), 0 4px 12px rgb(0 102 96 / 0.3);
 }
+
+@theme {
+  --animate-sheet-in: sheet-in 380ms var(--ease-out-soft) both;
+  @keyframes sheet-in {
+    from { transform: translateY(100%); }
+    to { transform: none; }
+  }
+}

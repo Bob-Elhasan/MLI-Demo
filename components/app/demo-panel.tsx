@@ -6,9 +6,9 @@ import { useTranslations } from "next-intl";
 import { Icon, type IconName } from "@/components/ui/icon";
 import { Wordmark } from "@/components/ui/wordmark";
 import { useLocale } from "@/lib/store/locale";
-import { useJourney } from "@/lib/store/journey";
-import { getProduct, priceQuote } from "@/lib/mock/products";
-import { ageFrom } from "@/lib/mock/kyc";
+import { seedDemoPolicy, useJourney, type Scenario } from "@/lib/store/journey";
+
+const SCENARIOS: Scenario[] = ["onTrack", "dueSoon", "grace", "lapsed", "checkIn", "anniversary"];
 
 /** Presenter controls, laptop only. Lets Bobby jump around the demo without clicking through everything. */
 export function DemoPanel() {
@@ -19,6 +19,14 @@ export function DemoPanel() {
   const verify = () => {
     const s = useJourney.getState();
     s.set({ phone: s.phone || "1001234567", phoneVerified: true, idConfirmed: true, livenessPassed: true });
+  };
+
+  const scenario = useJourney((s) => s.scenario);
+  const fastForward = (sc: Scenario) => {
+    seedDemoPolicy();
+    // A fresh check-in moment clears earlier answers so the cross-sell can be shown again
+    useJourney.getState().set({ scenario: sc, pausedMonths: 0, ...(sc === "checkIn" ? { lifeEvents: [] } : {}) });
+    router.push("/app/home");
   };
 
   const jumps: { label: string; icon: IconName; go: () => void }[] = [
@@ -43,21 +51,14 @@ export function DemoPanel() {
       label: t("jumpHome"),
       icon: "home",
       go: () => {
-        verify();
-        const s = useJourney.getState();
-        if (!s.policy) {
-          const product = getProduct("term-life")!;
-          const quote = priceQuote(product, ageFrom(s.idFields.dateOfBirth), product.cover.default, product.term.default);
-          s.set({ productId: product.id, quote });
-          s.issuePolicy();
-        }
+        seedDemoPolicy();
         router.push("/app/home");
       },
     },
   ];
 
   return (
-    <aside className="hidden w-64 shrink-0 flex-col gap-6 md:flex">
+    <aside className="no-scrollbar hidden max-h-[calc(100dvh-48px)] w-64 shrink-0 flex-col gap-5 overflow-y-auto md:flex">
       <div>
         <Wordmark product />
         <p className="mt-2 text-[13px] text-muted">{t("panelTitle")}</p>
@@ -89,6 +90,21 @@ export function DemoPanel() {
             >
               <Icon name={j.icon} size={20} className="text-accent" />
               {j.label}
+            </button>
+          ))}
+        </div>
+      </section>
+
+      <section className="space-y-2">
+        <h2 className="text-[12px] font-semibold tracking-wide text-muted uppercase">{t("scenario")}</h2>
+        <div className="grid grid-cols-2 gap-1.5">
+          {SCENARIOS.map((sc) => (
+            <button
+              key={sc}
+              onClick={() => fastForward(sc)}
+              className={`h-10 rounded-[12px] px-2 text-[13px] font-semibold transition ${scenario === sc ? "bg-ink text-mist" : "bg-paper text-ink-2 ring-1 ring-line hover:ring-line-strong"}`}
+            >
+              {t(sc)}
             </button>
           ))}
         </div>

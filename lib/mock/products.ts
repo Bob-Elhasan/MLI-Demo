@@ -32,7 +32,8 @@ export const products: Product[] = [
     kind: "savings",
     tint: "lavender",
     cover: { min: 50_000, max: 1_000_000, step: 50_000, default: 200_000 },
-    term: { min: 10, max: 40, default: 20 },
+    // Legacy prototype: minimum term 5 years, from age 18 (to verify with MLI)
+    term: { min: 5, max: 40, default: 20 },
     contribution: { min: 500, max: 10_000, step: 250, default: 1_500 },
     placeholder: false,
   },
