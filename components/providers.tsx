@@ -2,8 +2,11 @@
 
 import { NextIntlClientProvider } from "next-intl";
 import { useEffect, useMemo } from "react";
-import en from "@/messages/en.json";
-import ar from "@/messages/ar.json";
+import appEn from "@/messages/en.json";
+import appAr from "@/messages/ar.json";
+// Website and /connect copy lives in its own files so the surfaces can evolve independently
+import siteEn from "@/messages/site.en.json";
+import siteAr from "@/messages/site.ar.json";
 import { dirFor, useLocale } from "@/lib/store/locale";
 import { useJourney } from "@/lib/store/journey";
 
@@ -22,7 +25,8 @@ function merge(base: Messages, over: Messages): Messages {
   return out;
 }
 
-const catalog = { en, ar: merge(en, ar) };
+const en = merge(appEn, siteEn);
+const catalog = { en, ar: merge(en, merge(appAr, siteAr)) };
 
 export function Providers({ children }: { children: React.ReactNode }) {
   const locale = useLocale((s) => s.locale);
