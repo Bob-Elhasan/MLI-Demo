@@ -1,0 +1,38 @@
+{
+  "name": "mli-digital-ecosystem",
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "npx serve out",
+    "typecheck": "tsc --noEmit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bob-Elhasan/MLI-Demo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Bob-Elhasan/MLI-Demo/issues"
+  },
+  "homepage": "https://github.com/Bob-Elhasan/MLI-Demo#readme",
+  "dependencies": {
+    "@fontsource/ibm-plex-sans": "^5.3.0",
+    "@fontsource/ibm-plex-sans-arabic": "^5.3.0",
+    "next": "^16.4.3",
+    "next-intl": "^4.14.9",
+    "qrcode.react": "^4.2.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "zustand": "^5.0.16"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "postcss": "^8.5.32",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^5.9.3"
+  },
+  "private": true
+}

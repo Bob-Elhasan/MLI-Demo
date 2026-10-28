@@ -22,11 +22,21 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+        env:
+          NEXT_PUBLIC_BASE_PATH: /MLI-Demo
+      # Keep the previous single-file prototype reachable at /legacy/
+      - run: mkdir -p out/legacy && cp legacy/index.html out/legacy/index.html && touch out/.nojekyll
       - uses: actions/configure-pages@v5
         with:
           enablement: true
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: out
       - id: deployment
         uses: actions/deploy-pages@v4
