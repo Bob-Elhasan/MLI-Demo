@@ -52,7 +52,7 @@ export function AppLinkForm({ tone = "light" }: { tone?: "light" | "dark" }) {
           </span>
           {t("sentTitle")}
         </p>
-        <p className={`mt-3 text-[16px] leading-relaxed ${muted}`}>
+        <p className={`mt-3 text-[17px] leading-relaxed ${muted}`}>
           {t(channel === "whatsapp" ? "sentWhatsapp" : "sentSms", { phone: pretty(sent) })}
         </p>
         <button
@@ -61,7 +61,7 @@ export function AppLinkForm({ tone = "light" }: { tone?: "light" | "dark" }) {
             setSent(null);
             setPhone("");
           }}
-          className={`mt-4 text-[15px] font-semibold underline underline-offset-4 ${dark ? "text-mint" : "text-accent"}`}
+          className={`mt-4 text-[16px] font-semibold underline underline-offset-4 ${dark ? "text-mint" : "text-accent"}`}
         >
           {t("again")}
         </button>
@@ -72,7 +72,7 @@ export function AppLinkForm({ tone = "light" }: { tone?: "light" | "dark" }) {
   return (
     <form onSubmit={submit} noValidate className="w-full">
       <fieldset>
-        <legend className="text-[15px] font-semibold">{t("channel")}</legend>
+        <legend className="text-[16px] font-semibold">{t("channel")}</legend>
         <div role="radiogroup" className={`mt-3 inline-flex rounded-full p-1 ${dark ? "bg-mist/10" : "bg-ink/5"}`}>
           {(["whatsapp", "sms"] as Channel[]).map((c) => (
             <button
@@ -81,8 +81,8 @@ export function AppLinkForm({ tone = "light" }: { tone?: "light" | "dark" }) {
               role="radio"
               aria-checked={channel === c}
               onClick={() => setChannel(c)}
-              className={`h-10 rounded-full px-5 text-[15px] font-semibold transition-colors ${
-                channel === c ? (dark ? "bg-mint text-ink" : "bg-paper text-ink shadow-card") : dark ? "text-mist/80 hover:text-mist" : "text-muted hover:text-ink"
+              className={`h-10 rounded-full px-5 text-[16px] font-semibold transition-colors ${
+                channel === c ? (dark ? "bg-mint text-ink" : "bg-ink text-mist") : dark ? "text-mist/80 hover:text-mist" : "text-muted hover:text-ink"
               }`}
             >
               {t(c)}
@@ -91,12 +91,12 @@ export function AppLinkForm({ tone = "light" }: { tone?: "light" | "dark" }) {
         </div>
       </fieldset>
 
-      <label htmlFor={`${id}-phone`} className="mt-6 block text-[15px] font-semibold">
+      <label htmlFor={`${id}-phone`} className="mt-6 block text-[16px] font-semibold">
         {t("label")}
       </label>
-      <div className="mt-2 flex flex-col gap-3 sm:flex-row">
-        <div className={`flex h-14 flex-1 items-center rounded-full ps-5 pe-2 ${dark ? "bg-mist text-ink" : "bg-paper ring-1 ring-line-strong"} ${error ? "ring-2 ring-danger" : ""}`}>
-          <span className="pe-3 text-[16px] font-semibold text-muted" dir="ltr">
+      <div className="mt-2 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+        <div className={`flex h-14 items-center rounded-full ps-5 pe-2 sm:flex-[1_1_240px] ${dark ? "bg-mist text-ink" : "bg-ink/[0.06]"} ${error ? "outline-2 outline-danger" : ""}`}>
+          <span className="pe-3 text-[17px] font-semibold text-muted" dir="ltr">
             +20
           </span>
           <input
@@ -119,14 +119,14 @@ export function AppLinkForm({ tone = "light" }: { tone?: "light" | "dark" }) {
         <button
           type="submit"
           disabled={busy}
-          className={`inline-flex h-14 shrink-0 items-center justify-center gap-2 rounded-full px-7 text-[16px] font-semibold transition duration-200 active:scale-[0.98] disabled:opacity-60 ${
+          className={`inline-flex h-14 items-center justify-center gap-2 rounded-full px-7 sm:flex-auto text-[17px] font-semibold transition duration-200 active:scale-[0.98] disabled:opacity-60 ${
             dark ? "bg-mint text-ink hover:bg-aqua" : "bg-accent text-on-accent hover:bg-accent-strong"
           }`}
         >
           {busy ? t("sending") : t("send")}
         </button>
       </div>
-      <p id={`${id}-hint`} className={`mt-3 text-[14px] ${error ? (dark ? "font-semibold text-lilac" : "font-semibold text-danger") : muted}`}>
+      <p id={`${id}-hint`} className={`mt-3 text-[16px] ${error ? (dark ? "font-semibold text-lilac" : "font-semibold text-danger") : muted}`}>
         {error ? t("error") : t("hint")}
       </p>
     </form>

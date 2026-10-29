@@ -14,7 +14,7 @@ const topicsFor: Record<IntentKind, string[]> = {
 };
 
 const input =
-  "h-13 w-full rounded-[var(--radius-sm)] bg-paper px-4 text-[17px] text-ink ring-1 ring-line-strong outline-none transition-shadow focus:ring-2 focus:ring-accent aria-[invalid=true]:ring-2 aria-[invalid=true]:ring-danger";
+  "h-13 w-full rounded-[var(--radius-sm)] bg-ink/[0.06] px-4 text-[17px] text-ink outline-none transition-colors focus:bg-paper focus:outline-2 focus:outline-accent aria-[invalid=true]:outline-2 aria-[invalid=true]:outline-danger";
 
 /** Intent capture. Mocked submit: validates, then shows a reference number. Nothing leaves the page. */
 export function IntentForm({ kind = "general", defaultTopic }: { kind?: IntentKind; defaultTopic?: string }) {
@@ -56,8 +56,8 @@ export function IntentForm({ kind = "general", defaultTopic }: { kind?: IntentKi
           <Icon name="check" size={26} />
         </span>
         <p className="mt-5 text-[26px] leading-tight font-semibold tracking-tight">{t("successTitle")}</p>
-        <p className="mt-3 text-[17px] leading-relaxed text-ink-2">{t(`success.${kind}`, { name: values.name.trim().split(" ")[0] })}</p>
-        <p className="mt-5 text-[15px] text-muted">
+        <p className="mt-3 text-[17px] leading-relaxed text-ink">{t(`success.${kind}`, { name: values.name.trim().split(" ")[0] })}</p>
+        <p className="mt-5 text-[16px] text-muted">
           {t("reference")} <span className="font-semibold text-ink tabular" dir="ltr">{ref}</span>
         </p>
         <button
@@ -66,7 +66,7 @@ export function IntentForm({ kind = "general", defaultTopic }: { kind?: IntentKi
             setRef(null);
             setValues((s) => ({ ...s, message: "" }));
           }}
-          className="mt-6 text-[15px] font-semibold text-accent underline underline-offset-4"
+          className="mt-6 text-[16px] font-semibold text-accent underline underline-offset-4"
         >
           {t("another")}
         </button>
@@ -76,14 +76,14 @@ export function IntentForm({ kind = "general", defaultTopic }: { kind?: IntentKi
 
   const field = (name: string, label: string, el: React.ReactNode, hint?: string) => (
     <div>
-      <label htmlFor={`${id}-${name}`} className="block text-[15px] font-semibold">
+      <label htmlFor={`${id}-${name}`} className="block text-[16px] font-semibold">
         {label}
       </label>
       <div className="mt-2">{el}</div>
       {errors[name] ? (
-        <p className="mt-2 text-[14px] font-semibold text-danger">{t(`errors.${name}`)}</p>
+        <p className="mt-2 text-[16px] font-semibold text-danger">{t(`errors.${name}`)}</p>
       ) : (
-        hint && <p className="mt-2 text-[14px] text-muted">{hint}</p>
+        hint && <p className="mt-2 text-[16px] text-muted">{hint}</p>
       )}
     </div>
   );
@@ -146,7 +146,7 @@ export function IntentForm({ kind = "general", defaultTopic }: { kind?: IntentKi
         )}
       </div>
       <div className="sm:col-span-2">
-        <label className="flex items-start gap-3 text-[15px] leading-relaxed text-ink-2">
+        <label className="flex items-start gap-3 text-[16px] leading-relaxed text-ink">
           <input
             type="checkbox"
             checked={values.consent}
@@ -156,17 +156,17 @@ export function IntentForm({ kind = "general", defaultTopic }: { kind?: IntentKi
           />
           {t("consent")}
         </label>
-        {errors.consent && <p className="mt-2 text-[14px] font-semibold text-danger">{t("errors.consent")}</p>}
+        {errors.consent && <p className="mt-2 text-[16px] font-semibold text-danger">{t("errors.consent")}</p>}
       </div>
       <div className="flex flex-wrap items-center gap-4 sm:col-span-2">
         <button
           type="submit"
           disabled={busy}
-          className="inline-flex h-14 items-center justify-center rounded-full bg-accent px-8 text-[16px] font-semibold text-on-accent transition duration-200 hover:bg-accent-strong active:scale-[0.98] disabled:opacity-60"
+          className="inline-flex h-14 items-center justify-center rounded-full bg-accent px-8 text-[17px] font-semibold text-on-accent transition duration-200 hover:bg-accent-strong active:scale-[0.98] disabled:opacity-60"
         >
           {busy ? t("sending") : t(`submit.${kind}`)}
         </button>
-        <p className="text-[14px] text-muted">{t(`reply.${kind}`)}</p>
+        <p className="text-[16px] text-muted">{t(`reply.${kind}`)}</p>
       </div>
     </form>
   );

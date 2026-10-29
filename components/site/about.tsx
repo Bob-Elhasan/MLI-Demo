@@ -2,11 +2,11 @@
 
 import Link from "next/link";
 import { useTranslations } from "next-intl";
-import { ButtonLink } from "@/components/ui/button";
+import { SiteLink } from "./button";
 import { Icon } from "@/components/ui/icon";
 import { aboutNav } from "@/lib/mock/site/nav";
 import type { PictureKey } from "@/lib/mock/site/pictures";
-import { BigList, FactRows, PageHead, Picture, PlaceholderNote, Section, SubNav, type Field } from "./blocks";
+import { BigList, CityStrip, FactRows, PageHead, Picture, PlaceholderNote, Section, SubNav, type Field } from "./blocks";
 import { frame, type } from "./styles";
 
 type Row = { label: string; value: string; note?: string };
@@ -19,6 +19,7 @@ function AboutShell({ page, field, picture, children }: { page: string; field: F
       <PageHead title={t(`${page}.title`)} body={t(`${page}.body`)} field={field} picture={picture} />
       <SubNav items={aboutNav} label={t("navLabel")} />
       {children}
+      <CityStrip seed={`about-${page}`} exclude={picture} />
     </>
   );
 }
@@ -28,8 +29,8 @@ export function AboutCompany() {
   return (
     <AboutShell page="company" field="mint" picture="cairostreet1900">
       <section aria-labelledby="who-title" className="bg-mist">
-        <div className={`${frame} grid gap-12 py-24 md:grid-cols-12 md:py-32`}>
-          <div className="md:col-span-7">
+        <div className={`${frame} grid gap-12 py-24 lg:grid-cols-12 md:py-32`}>
+          <div className="lg:col-span-7">
             <h2 id="who-title" data-reveal className={`${type.h2} max-w-[14ch]`}>
               {t("whoTitle")}
             </h2>
@@ -39,7 +40,7 @@ export function AboutCompany() {
               </p>
             ))}
           </div>
-          <div data-reveal style={d(2)} className="md:col-span-5">
+          <div data-reveal style={d(2)} className="lg:col-span-5">
             <FactRows rows={t.raw("facts") as Row[]} />
           </div>
         </div>
@@ -48,7 +49,7 @@ export function AboutCompany() {
       <section aria-label={t("bandLabel")} className="relative h-[60svh] min-h-[380px] overflow-hidden bg-ink">
         <Picture name="nileboats1900" className="absolute inset-0" imgClassName="drift" />
         <div className={`${frame} absolute inset-x-0 bottom-0 pb-6`}>
-          <p className="w-fit rounded-full bg-ink/70 px-4 py-2 text-[14px] text-mist">{t("bandCaption")}</p>
+          <p className="w-fit rounded-full bg-ink/70 px-4 py-2 text-[16px] text-mist">{t("bandCaption")}</p>
         </div>
       </section>
 
@@ -63,17 +64,17 @@ export function AboutCompany() {
           </h2>
           <div data-reveal style={d(1)} className="md:col-span-6 md:col-start-7">
             {(t.raw("next") as string[]).map((p, i) => (
-              <p key={i} className={`${i === 0 ? type.lead : type.body} ${i > 0 ? "mt-5 text-ink-2" : ""} max-w-[56ch]`}>
+              <p key={i} className={`${i === 0 ? type.lead : type.body} ${i > 0 ? "mt-5 text-ink" : ""} max-w-[56ch]`}>
                 {p}
               </p>
             ))}
             <div className="mt-8 flex flex-wrap gap-3">
-              <ButtonLink href="/connect/" size="md" className="h-14 px-7">
+              <SiteLink href="/connect/">
                 {t("nextCta")}
-              </ButtonLink>
-              <ButtonLink href="/investor-relations/" size="md" variant="secondary" className="h-14 px-6">
+              </SiteLink>
+              <SiteLink href="/investor-relations/" variant="quiet">
                 {t("nextIr")}
-              </ButtonLink>
+              </SiteLink>
             </div>
           </div>
         </div>
@@ -86,14 +87,14 @@ export function AboutLeadership() {
   const t = useTranslations("site.about.leadership");
   const roles = t.raw("roles") as { role: string; remit: string }[];
   return (
-    <AboutShell page="leadership" field="icy">
+    <AboutShell page="leadership" field="icy" picture="qasralnilbridge">
       <Section id="management" title={t("mgmtTitle")} intro={t("mgmtBody")}>
         <ul className="grid gap-2 sm:grid-cols-2">
           {roles.map((r, i) => (
             <li key={r.role} data-reveal style={d(i % 4)} className="rounded-[var(--radius-md)] bg-paper p-6">
-              <p className="text-[15px] font-medium text-muted">{t("namePlaceholder")}</p>
+              <p className="text-[16px] font-medium text-muted">{t("namePlaceholder")}</p>
               <p className="mt-2 text-[21px] leading-tight font-semibold tracking-tight">{r.role}</p>
-              <p className="mt-3 text-[16px] leading-relaxed text-ink-2">{r.remit}</p>
+              <p className="mt-3 text-[17px] leading-relaxed text-ink">{r.remit}</p>
             </li>
           ))}
         </ul>
@@ -134,7 +135,7 @@ export function AboutHistory() {
               {t("timelineBody")}
             </p>
           </div>
-          <ol className="mt-16">
+          <ol className="mt-16 space-y-6 md:space-y-0">
             {events.map((e, i) => (
               <li
                 key={i}
@@ -143,12 +144,10 @@ export function AboutHistory() {
               >
                 <span className="text-[clamp(36px,4.2vw,60px)] leading-none font-semibold tracking-tight text-accent tabular md:col-span-3">{e.year}</span>
                 <span className="md:col-span-4">
-                  <span className="block text-[21px] leading-tight font-semibold tracking-tight">{e.title}</span>
+                  <h3 className="text-[21px] leading-tight font-semibold tracking-tight">{e.title}</h3>
+                  {e.verify && <span className="mt-2 block text-[16px] text-warning">{t("verify")}</span>}
                 </span>
-                <span className="text-[16px] leading-relaxed text-ink-2 md:col-span-5">
-                  {e.body}
-                  {e.verify && <span className="mt-2 block text-[14px] text-warning">{t("verify")}</span>}
-                </span>
+                <span className="text-[17px] leading-relaxed text-ink md:col-span-5">{e.body}</span>
               </li>
             ))}
           </ol>
@@ -160,7 +159,7 @@ export function AboutHistory() {
             <h2 id="then-title" data-reveal className={`${type.h2} max-w-[12ch]`}>
               {t("thenTitle")}
             </h2>
-            <p data-reveal style={d(1)} className={`${type.body} mt-6 text-ink-2`}>
+            <p data-reveal style={d(1)} className={`${type.body} mt-6 text-ink`}>
               {t("thenBody")}
             </p>
           </div>

@@ -2,7 +2,8 @@
 
 import { useTranslations } from "next-intl";
 import { AppLinkForm } from "./app-link-form";
-import { Faq, PageHead, PlaceholderNote, Section } from "./blocks";
+import { CityStrip, Faq, PageHead, PlaceholderNote, Section } from "./blocks";
+import { siteButton } from "./button";
 import { IntentForm } from "./intent-form";
 import { frame, type } from "./styles";
 
@@ -13,20 +14,29 @@ export function ContactPage() {
   const ways = t.raw("ways") as { label: string; value: string; href?: string; note: string }[];
   return (
     <>
-      <PageHead title={t("title")} body={t("body")} field="aqua" />
+      <PageHead title={t("title")} body={t("body")} field="aqua" picture="nileskyline">
+        <div className="flex flex-wrap gap-3">
+          <a href="tel:19446" className={siteButton("primary")}>
+            {t("call")}
+          </a>
+          <a href="#form-title" className={siteButton("quiet")}>
+            {t("write")}
+          </a>
+        </div>
+      </PageHead>
       <section aria-labelledby="form-title" className="bg-mist">
         <div className={`${frame} grid gap-14 py-20 md:grid-cols-12 md:py-28`}>
           <div className="md:col-span-4">
             <h2 id="form-title" data-reveal className={`${type.h2} max-w-[12ch]`}>
               {t("formTitle")}
             </h2>
-            <p data-reveal style={d(1)} className={`${type.body} mt-6 text-ink-2`}>
+            <p data-reveal style={d(1)} className={`${type.body} mt-6 text-ink`}>
               {t("formBody")}
             </p>
             <ul className="mt-10 space-y-6">
               {ways.map((w, i) => (
                 <li key={w.label} data-reveal style={d(i)}>
-                  <p className="text-[15px] text-muted">{w.label}</p>
+                  <p className="text-[16px] text-muted">{w.label}</p>
                   {w.href ? (
                     <a href={w.href} className="mt-1 block text-[26px] leading-tight font-semibold tracking-tight text-accent hover:text-accent-strong" dir="ltr">
                       {w.value}
@@ -34,7 +44,7 @@ export function ContactPage() {
                   ) : (
                     <p className="mt-1 text-[26px] leading-tight font-semibold tracking-tight">{w.value}</p>
                   )}
-                  <p className="mt-1 text-[15px] text-ink-2">{w.note}</p>
+                  <p className="mt-1 text-[16px] text-ink">{w.note}</p>
                 </li>
               ))}
             </ul>
@@ -53,7 +63,7 @@ export function ContactPage() {
             <h2 id="app-title" data-reveal className={`${type.h2} max-w-[12ch]`}>
               {t("appTitle")}
             </h2>
-            <p data-reveal style={d(1)} className={`${type.body} mt-6 text-ink-2`}>
+            <p data-reveal style={d(1)} className={`${type.body} mt-6 text-ink`}>
               {t("appBody")}
             </p>
           </div>
@@ -62,9 +72,10 @@ export function ContactPage() {
           </div>
         </div>
       </section>
-      <Section id="faq" title={t("faqTitle")} field="paper">
+      <Section id="faq" title={t("faqTitle")} field="mist">
         <Faq items={t.raw("faqs") as { q: string; a: string }[]} />
       </Section>
+      <CityStrip seed="contact" exclude="nileskyline" />
     </>
   );
 }

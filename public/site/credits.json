@@ -186,5 +186,31 @@
   "notes": [],
   "saved": "2026-10-28T23:46:23.159Z",
   "alt": "Qasr al-Nil Bridge in Cairo with its stone lions and towers"
+ },
+ {
+  "file": "public/site/nile-river.webm",
+  "media": "video",
+  "poster": "public/site/nile-river-poster.jpg",
+  "ref": "commons:11988191",
+  "title": "Nile-River2",
+  "creator": "Faris El-Gwely",
+  "creatorUrl": null,
+  "date": "16 September 2010 (according to Exif data)",
+  "license": "CC BY-SA 3.0",
+  "licenseCode": "by-sa",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "creditRequired": true,
+  "page": "https://commons.wikimedia.org/wiki/File:Nile-River2.ogv",
+  "via": "Wikimedia Commons",
+  "video": "https://upload.wikimedia.org/wikipedia/commons/transcoded/0/0b/Nile-River2.ogv/Nile-River2.ogv.480p.vp9.webm",
+  "width": 640,
+  "height": 480,
+  "duration": 15.8,
+  "bytes": 1328964,
+  "credit": "\"Nile-River2\" by Faris El-Gwely, CC BY-SA 3.0, via Wikimedia Commons",
+  "notes": [
+   "Share-alike: an altered version (recoloured, combined with other pictures) must be shared under the same licence."
+  ],
+  "saved": "2026-10-29T00:18:19.425Z"
  }
 ]

@@ -69,3 +69,21 @@ html[lang="ar"] .display {
     transition: none;
   }
 }
+
+/* Waterline hero: Arabic needs taller lines, the seam maths follows */
+html[lang="ar"] .hero-waterline {
+  --lh: 1.18;
+}
+
+/* The seam cuts the second headline line: its lower part is repainted in deep ink */
+.waterline-line {
+  position: relative;
+}
+.waterline-line::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  color: var(--color-ink);
+  clip-path: inset(calc(0.5 * var(--lh) * 1em + 0.1em) -0.1em -0.3em -0.1em);
+  pointer-events: none;
+}

@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
-import { pictures, type PictureKey } from "@/lib/mock/site/pictures";
+import { useEffect, useRef } from "react";
+import { clips, pictures, type PictureKey } from "@/lib/mock/site/pictures";
 import type { NavItem } from "@/lib/mock/site/nav";
 import { asset, frame, type } from "./styles";
 
@@ -38,7 +39,7 @@ export function Picture({
 }) {
   const p = pictures[name];
   return (
-    <figure className={`relative overflow-hidden ${className}`}>
+    <figure className={`min-w-0 overflow-hidden ${className}`}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={asset(`/site/${p.file}`)}
@@ -49,7 +50,44 @@ export function Picture({
         decoding="async"
         className={`size-full object-cover ${imgClassName}`}
       />
-      {caption && <figcaption className="mt-3 text-[14px] leading-snug text-muted">{caption}</figcaption>}
+      {caption && <figcaption className="mt-3 text-[16px] leading-snug opacity-80">{caption}</figcaption>}
+    </figure>
+  );
+}
+
+/** The one moving picture: a muted loop with its poster. Held on the poster when motion is reduced. */
+export function Clip({ name, className = "", caption }: { name: keyof typeof clips; className?: string; caption?: string }) {
+  const c = clips[name];
+  const ref = useRef<HTMLVideoElement>(null);
+  useEffect(() => {
+    const v = ref.current;
+    if (!v) return;
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const apply = () => (mq.matches ? v.pause() : v.play().catch(() => {}));
+    apply();
+    mq.addEventListener("change", apply);
+    return () => mq.removeEventListener("change", apply);
+  }, []);
+  return (
+    <figure className={`min-w-0 ${className}`}>
+      <div className="relative size-full overflow-hidden">
+        <video
+          ref={ref}
+          muted
+          loop
+          playsInline
+          autoPlay
+          preload="metadata"
+          poster={asset(`/site/${c.poster}`)}
+          width={c.width}
+          height={c.height}
+          aria-label={c.alt}
+          className="block size-full max-w-full object-cover"
+        >
+          <source src={asset(`/site/${c.file}`)} type="video/webm" />
+        </video>
+      </div>
+      {caption && <figcaption className="mt-3 text-[16px] leading-snug opacity-80">{caption}</figcaption>}
     </figure>
   );
 }
@@ -92,13 +130,49 @@ export function PageHead({
   );
 }
 
+const cityPool: PictureKey[] = ["muskistreet1900", "nileboats1900", "cairopostcard1903", "nilometerroda", "cairostreet1900", "nileskyline", "qasralnilbridge", "nilecorniche"];
+
+/**
+ * Three real pictures of the city Misr Life has served since 1900, closing each inner page.
+ * The set rotates by page so neighbouring pages do not repeat, and skips the page head's picture.
+ */
+export function CityStrip({ seed, exclude }: { seed: string; exclude?: PictureKey }) {
+  const t = useTranslations("site.city");
+  const tp = useTranslations("site.pictureCaptions");
+  const pool = cityPool.filter((p) => p !== exclude);
+  let h = 0;
+  for (const ch of seed) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
+  const picks = [0, 1, 2].map((i) => pool[(h + i * 2) % pool.length]);
+  return (
+    <section aria-labelledby={`city-${seed}`} className="bg-paper">
+      <div className={`${frame} py-20 md:py-28`}>
+        <div className="grid gap-6 lg:grid-cols-12">
+          <h2 id={`city-${seed}`} data-reveal className={`${type.h2} max-w-[14ch] lg:col-span-6`}>
+            {t("title")}
+          </h2>
+          <p data-reveal style={d(1)} className={`${type.body} max-w-[52ch] lg:col-span-5 lg:col-start-8`}>
+            {t("body")}
+          </p>
+        </div>
+        <div className="mt-12 grid gap-6 sm:grid-cols-3">
+          {picks.map((p, i) => (
+            <div key={p} data-reveal style={d(i)}>
+              <Picture name={p} className="aspect-[4/3]" caption={tp(p)} />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /** Section navigation for multi-page areas (Investor Relations, About Us, Partners) */
 export function SubNav({ items, label }: { items: NavItem[]; label: string }) {
   const t = useTranslations("site.nav");
   const pathname = usePathname() || "/";
   return (
-    <nav aria-label={label} className="sticky top-0 z-30 bg-mist/95">
-      <div className={`${frame} no-scrollbar flex gap-1 overflow-x-auto py-3`}>
+    <nav aria-label={label} className="z-30 bg-mist md:sticky md:top-0">
+      <div className={`${frame} flex flex-wrap gap-1 py-3`}>
         {items.map((item) => {
           const active = pathname === item.href || pathname === item.href.replace(/\/$/, "");
           return (
@@ -106,7 +180,7 @@ export function SubNav({ items, label }: { items: NavItem[]; label: string }) {
               key={item.href}
               href={item.href}
               aria-current={active ? "page" : undefined}
-              className="shrink-0 rounded-full px-4 py-2 text-[15px] font-medium whitespace-nowrap text-ink-2 transition-colors hover:bg-ink/5 hover:text-ink aria-[current=page]:bg-ink aria-[current=page]:text-mist"
+              className="shrink-0 rounded-full px-4 py-2 text-[16px] font-medium whitespace-nowrap text-ink transition-colors hover:bg-ink/5 hover:text-ink aria-[current=page]:bg-ink aria-[current=page]:text-mist"
             >
               {t(item.key)}
             </Link>
@@ -138,18 +212,18 @@ export function Section({
   const headingId = id ? `${id}-title` : undefined;
   return (
     <section id={id} aria-labelledby={headingId} className={`${fieldClass[field]} ${className}`}>
-      <div className={`${frame} py-20 md:py-28 ${layout === "split" ? "grid gap-10 md:grid-cols-12" : ""}`}>
-        <div className={layout === "split" ? "md:col-span-4" : "max-w-3xl"}>
+      <div className={`${frame} py-20 md:py-28 ${layout === "split" ? "grid gap-10 lg:grid-cols-12" : ""}`}>
+        <div className={layout === "split" ? "lg:col-span-4" : "max-w-3xl"}>
           <h2 id={headingId} data-reveal className={`${type.h2} max-w-[16ch]`}>
             {title}
           </h2>
           {intro && (
-            <p data-reveal style={d(1)} className={`${type.body} mt-5 max-w-[46ch] ${field === "ink" ? "text-mist/85" : "text-ink-2"}`}>
+            <p data-reveal style={d(1)} className={`${type.body} mt-5 max-w-[46ch] ${field === "ink" ? "text-mist/85" : "text-ink"}`}>
               {intro}
             </p>
           )}
         </div>
-        <div data-reveal style={d(2)} className={layout === "split" ? "md:col-span-8" : "mt-12"}>
+        <div data-reveal style={d(2)} className={layout === "split" ? "lg:col-span-8" : "mt-12"}>
           {children}
         </div>
       </div>
@@ -164,14 +238,14 @@ export function FactRows({ rows, tone = "ink" }: { rows: { label: string; value:
       {rows.map((r, i) => (
         <div
           key={r.label}
-          className={`grid gap-1 px-4 py-4 sm:grid-cols-[minmax(160px,1fr)_2fr] sm:gap-6 ${
+          className={`grid gap-1 px-4 py-4 sm:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] sm:gap-6 ${
             i % 2 === 0 ? (tone === "ink" ? "bg-ink/[0.04]" : "bg-mist/10") : ""
           } rounded-[var(--radius-sm)]`}
         >
-          <dt className={`text-[15px] ${tone === "ink" ? "text-muted" : "text-mist/75"}`}>{r.label}</dt>
+          <dt className={`text-[16px] ${tone === "ink" ? "text-muted" : "text-mist/75"}`}>{r.label}</dt>
           <dd className="text-[17px] font-medium">
             {r.value}
-            {r.note && <span className={`mt-1 block text-[14px] font-normal ${tone === "ink" ? "text-muted" : "text-mist/75"}`}>{r.note}</span>}
+            {r.note && <span className={`mt-1 block text-[16px] font-normal ${tone === "ink" ? "text-muted" : "text-mist/75"}`}>{r.note}</span>}
           </dd>
         </div>
       ))}
@@ -194,7 +268,7 @@ export function Faq({ items, tone = "ink" }: { items: { q: string; a: string }[]
               +
             </span>
           </summary>
-          <p className={`${type.body} max-w-[62ch] pb-5 ${tone === "ink" ? "text-ink-2" : "text-mist/85"}`}>{it.a}</p>
+          <p className={`${type.body} max-w-[62ch] pb-5 ${tone === "ink" ? "text-ink" : "text-mist/85"}`}>{it.a}</p>
         </details>
       ))}
     </div>
@@ -216,5 +290,5 @@ export function BigList({ items }: { items: string[] }) {
 
 /** Placeholder marker for content the client must confirm. Visible on purpose. */
 export function PlaceholderNote({ children }: { children: React.ReactNode }) {
-  return <p className="text-[14px] leading-relaxed text-warning">{children}</p>;
+  return <p className="text-[16px] leading-relaxed text-warning">{children}</p>;
 }

@@ -168,31 +168,79 @@
             "No medical exam to get started."
           ],
           "terms": [
-            { "label": "Age at entry", "value": "18 to 59 years" },
-            { "label": "Payout", "value": "Lump sum, or a fixed monthly income for 10 or 15 years" },
-            { "label": "Cover", "value": "Death and permanent total disability" },
-            { "label": "Medical exam", "value": "Not required" },
-            { "label": "Number of policies", "value": "Up to 4, one per maturity age" },
-            { "label": "To apply", "value": "A valid national ID" }
+            {
+              "label": "Age at entry",
+              "value": "18 to 59 years"
+            },
+            {
+              "label": "Payout",
+              "value": "Lump sum, or a fixed monthly income for 10 or 15 years"
+            },
+            {
+              "label": "Cover",
+              "value": "Death and permanent total disability"
+            },
+            {
+              "label": "Medical exam",
+              "value": "Not required"
+            },
+            {
+              "label": "Number of policies",
+              "value": "Up to 4, one per maturity age"
+            },
+            {
+              "label": "To apply",
+              "value": "A valid national ID"
+            }
           ],
           "earlyTitle": "If You Need Your Money Early",
           "earlyBody": "This is an insurance policy, not a bank certificate. If you need your money before maturity, this is how much of your premiums you can take back.",
           "early": [
-            { "label": "Year 1", "value": "Not available" },
-            { "label": "Years 2 and 3", "value": "95% of premiums paid" },
-            { "label": "After year 3", "value": "100% of premiums paid" }
+            {
+              "label": "Year 1",
+              "value": "Not available"
+            },
+            {
+              "label": "Years 2 and 3",
+              "value": "95% of premiums paid"
+            },
+            {
+              "label": "After year 3",
+              "value": "100% of premiums paid"
+            }
           ],
           "variantsTitle": "Three Ways To Hold It",
           "variants": [
-            { "name": "Maash Bokra (EGP)", "body": "The original plan, in Egyptian pounds." },
-            { "name": "Maash Bokra (USD)", "body": "For Egyptians abroad. Saved in US dollars, with the benefit paid to your family in Egypt." },
-            { "name": "Maash Bokra Digital", "body": "The same plan, bought and managed entirely in MLI Connect." }
+            {
+              "name": "Maash Bokra (EGP)",
+              "body": "The original plan, in Egyptian pounds."
+            },
+            {
+              "name": "Maash Bokra (USD)",
+              "body": "For Egyptians abroad. Saved in US dollars, with the benefit paid to your family in Egypt."
+            },
+            {
+              "name": "Maash Bokra Digital",
+              "body": "The same plan, bought and managed entirely in MLI Connect."
+            }
           ],
           "faqs": [
-            { "q": "Can I increase my saving later?", "a": "Yes. You can top up within the plan's limits whenever you like. Exact limits are in your policy document." },
-            { "q": "Are the returns guaranteed?", "a": "No. Savings products carry no guaranteed returns. Your policy document explains how your fund is managed." },
-            { "q": "What happens if I miss a payment?", "a": "There is a grace period. MLI Connect reminds you before the due date and lets you catch up in one tap." },
-            { "q": "Where can I buy it?", "a": "In MLI Connect, the only place to buy a Misr Life policy online. It verifies your identity with your phone camera, as the FRA requires." }
+            {
+              "q": "Can I increase my saving later?",
+              "a": "Yes. You can top up within the plan's limits whenever you like. Exact limits are in your policy document."
+            },
+            {
+              "q": "Are the returns guaranteed?",
+              "a": "No. Savings products carry no guaranteed returns. Your policy document explains how your fund is managed."
+            },
+            {
+              "q": "What happens if I miss a payment?",
+              "a": "There is a grace period. MLI Connect reminds you before the due date and lets you catch up in one tap."
+            },
+            {
+              "q": "Where can I buy it?",
+              "a": "In MLI Connect, the only place to buy a Misr Life policy online. It verifies your identity with your phone camera, as the FRA requires."
+            }
           ]
         },
         "termLife": {
@@ -207,16 +255,40 @@
             "Bought in minutes, managed in the app."
           ],
           "terms": [
-            { "label": "Age at entry", "value": "[To be confirmed]" },
-            { "label": "Policy term", "value": "5 to 30 years (placeholder)" },
-            { "label": "Cover", "value": "Death, with optional disability cover (placeholder)" },
-            { "label": "Medical exam", "value": "Not required up to a set cover amount (placeholder)" },
-            { "label": "To apply", "value": "A valid national ID" }
+            {
+              "label": "Age at entry",
+              "value": "[To be confirmed]"
+            },
+            {
+              "label": "Policy term",
+              "value": "5 to 30 years (placeholder)"
+            },
+            {
+              "label": "Cover",
+              "value": "Death, with optional disability cover (placeholder)"
+            },
+            {
+              "label": "Medical exam",
+              "value": "Not required up to a set cover amount (placeholder)"
+            },
+            {
+              "label": "To apply",
+              "value": "A valid national ID"
+            }
           ],
           "faqs": [
-            { "q": "Who receives the money?", "a": "The beneficiaries you name in the app. You can change them at any time from the Family Vault." },
-            { "q": "What does it cost?", "a": "MLI Connect shows an indicative premium as you choose your cover. The final price is confirmed after your application is reviewed." },
-            { "q": "Can I add more cover later?", "a": "Yes. When life changes, the app helps you review your cover." }
+            {
+              "q": "Who receives the money?",
+              "a": "The beneficiaries you name in the app. You can change them at any time from the Family Vault."
+            },
+            {
+              "q": "What does it cost?",
+              "a": "MLI Connect shows an indicative premium as you choose your cover. The final price is confirmed after your application is reviewed."
+            },
+            {
+              "q": "Can I add more cover later?",
+              "a": "Yes. When life changes, the app helps you review your cover."
+            }
           ]
         },
         "familyProtection": {
@@ -231,16 +303,40 @@
             "Beneficiaries managed from the app."
           ],
           "terms": [
-            { "label": "Age at entry", "value": "[To be confirmed]" },
-            { "label": "Policy term", "value": "10 to 30 years (placeholder)" },
-            { "label": "Cover", "value": "Death and disability, plus an education benefit (placeholder)" },
-            { "label": "Who can be covered", "value": "You, with your spouse added later (placeholder)" },
-            { "label": "To apply", "value": "A valid national ID" }
+            {
+              "label": "Age at entry",
+              "value": "[To be confirmed]"
+            },
+            {
+              "label": "Policy term",
+              "value": "10 to 30 years (placeholder)"
+            },
+            {
+              "label": "Cover",
+              "value": "Death and disability, plus an education benefit (placeholder)"
+            },
+            {
+              "label": "Who can be covered",
+              "value": "You, with your spouse added later (placeholder)"
+            },
+            {
+              "label": "To apply",
+              "value": "A valid national ID"
+            }
           ],
           "faqs": [
-            { "q": "How is the education benefit paid?", "a": "Details will follow the approved product terms. The policy document is the only reference." },
-            { "q": "Can my spouse see the policy?", "a": "Yes. You can invite a beneficiary to view the policy details in MLI Connect." },
-            { "q": "What does it cost?", "a": "The app shows an indicative premium as you choose your cover. The final price is confirmed after review." }
+            {
+              "q": "How is the education benefit paid?",
+              "a": "Details will follow the approved product terms. The policy document is the only reference."
+            },
+            {
+              "q": "Can my spouse see the policy?",
+              "a": "Yes. You can invite a beneficiary to view the policy details in MLI Connect."
+            },
+            {
+              "q": "What does it cost?",
+              "a": "The app shows an indicative premium as you choose your cover. The final price is confirmed after review."
+            }
           ]
         },
         "education": {
@@ -255,16 +351,40 @@
             "Track the goal next to your policy in the app."
           ],
           "terms": [
-            { "label": "Child's age at entry", "value": "[To be confirmed]" },
-            { "label": "Policy term", "value": "Until the chosen payout age (placeholder)" },
-            { "label": "Payout", "value": "Staged payments or a lump sum (placeholder)" },
-            { "label": "Cover", "value": "Premium waiver on death of the parent (placeholder)" },
-            { "label": "To apply", "value": "A valid national ID" }
+            {
+              "label": "Child's age at entry",
+              "value": "[To be confirmed]"
+            },
+            {
+              "label": "Policy term",
+              "value": "Until the chosen payout age (placeholder)"
+            },
+            {
+              "label": "Payout",
+              "value": "Staged payments or a lump sum (placeholder)"
+            },
+            {
+              "label": "Cover",
+              "value": "Premium waiver on death of the parent (placeholder)"
+            },
+            {
+              "label": "To apply",
+              "value": "A valid national ID"
+            }
           ],
           "faqs": [
-            { "q": "Can I buy it in MLI Connect?", "a": "Not yet. For now an adviser completes it with you. Leave your details and we will call." },
-            { "q": "Is it a savings account?", "a": "No. It is an insurance policy with a savings element. There are no guaranteed returns." },
-            { "q": "Can I change the payout age?", "a": "This depends on the approved product terms, to be confirmed." }
+            {
+              "q": "Can I buy it in MLI Connect?",
+              "a": "Not yet. For now an adviser completes it with you. Leave your details and we will call."
+            },
+            {
+              "q": "Is it a savings account?",
+              "a": "No. It is an insurance policy with a savings element. There are no guaranteed returns."
+            },
+            {
+              "q": "Can I change the payout age?",
+              "a": "This depends on the approved product terms, to be confirmed."
+            }
           ]
         },
         "creditLife": {
@@ -279,16 +399,40 @@
             "Monthly reporting for the lender."
           ],
           "terms": [
-            { "label": "Who buys it", "value": "The lender, for its borrowers" },
-            { "label": "Cover", "value": "Outstanding balance on death and disability (placeholder)" },
-            { "label": "Term", "value": "Matches the loan term (placeholder)" },
-            { "label": "Integration", "value": "Branch, app or API (placeholder)" },
-            { "label": "Pricing", "value": "Agreed per portfolio with our corporate team" }
+            {
+              "label": "Who buys it",
+              "value": "The lender, for its borrowers"
+            },
+            {
+              "label": "Cover",
+              "value": "Outstanding balance on death and disability (placeholder)"
+            },
+            {
+              "label": "Term",
+              "value": "Matches the loan term (placeholder)"
+            },
+            {
+              "label": "Integration",
+              "value": "Branch, app or API (placeholder)"
+            },
+            {
+              "label": "Pricing",
+              "value": "Agreed per portfolio with our corporate team"
+            }
           ],
           "faqs": [
-            { "q": "Can a borrower buy this alone?", "a": "No. It is arranged by the lender. Borrowers can ask their lender whether their loan includes it." },
-            { "q": "How fast can a lender go live?", "a": "That depends on the integration route. Our corporate team scopes it with you." },
-            { "q": "Who handles claims?", "a": "Misr Life, with the lender informed at every stage." }
+            {
+              "q": "Can a borrower buy this alone?",
+              "a": "No. It is arranged by the lender. Borrowers can ask their lender whether their loan includes it."
+            },
+            {
+              "q": "How fast can a lender go live?",
+              "a": "That depends on the integration route. Our corporate team scopes it with you."
+            },
+            {
+              "q": "Who handles claims?",
+              "a": "Misr Life, with the lender informed at every stage."
+            }
           ]
         },
         "groupLife": {
@@ -303,16 +447,40 @@
             "One account manager for your HR team."
           ],
           "terms": [
-            { "label": "Minimum group size", "value": "[To be confirmed]" },
-            { "label": "Cover", "value": "A multiple of salary or a fixed amount (placeholder)" },
-            { "label": "Medical exam", "value": "Usually not required (placeholder)" },
-            { "label": "Policy term", "value": "One year, renewable" },
-            { "label": "Pricing", "value": "Quoted for your group by our corporate team" }
+            {
+              "label": "Minimum group size",
+              "value": "[To be confirmed]"
+            },
+            {
+              "label": "Cover",
+              "value": "A multiple of salary or a fixed amount (placeholder)"
+            },
+            {
+              "label": "Medical exam",
+              "value": "Usually not required (placeholder)"
+            },
+            {
+              "label": "Policy term",
+              "value": "One year, renewable"
+            },
+            {
+              "label": "Pricing",
+              "value": "Quoted for your group by our corporate team"
+            }
           ],
           "faqs": [
-            { "q": "Can employees see their cover?", "a": "This is planned for MLI Connect. Today your HR team receives the member schedule." },
-            { "q": "How do we get a quote?", "a": "Send us your group details through the corporate page and our team will be in touch." },
-            { "q": "Can we cover families too?", "a": "Options depend on the approved product terms, to be confirmed." }
+            {
+              "q": "Can employees see their cover?",
+              "a": "This is planned for MLI Connect. Today your HR team receives the member schedule."
+            },
+            {
+              "q": "How do we get a quote?",
+              "a": "Send us your group details through the corporate page and our team will be in touch."
+            },
+            {
+              "q": "Can we cover families too?",
+              "a": "Options depend on the approved product terms, to be confirmed."
+            }
           ]
         }
       }
@@ -342,11 +510,24 @@
       },
       "faqTitle": "Before You Choose",
       "faqs": [
-        { "q": "Why can't I buy on the website?", "a": "Buying a policy online needs facial recognition, which the FRA requires for digital sales. That happens in the MLI Connect app, so the website is where you learn and the app is where you buy." },
-        { "q": "Why are there no prices here?", "a": "Prices depend on your age, cover and term. MLI Connect shows an indicative premium as you choose, and the final price is confirmed after review." },
-        { "q": "I already have a policy. Can I use the app?", "a": "Yes. Existing customers can track their policy and pay installments in MLI Connect." },
-        { "q": "Is the policy document the final word?", "a": "Yes. The approved policy document is the only reference for terms and conditions." }
-      ]
+        {
+          "q": "Why can't I buy on the website?",
+          "a": "Buying a policy online needs facial recognition, which the FRA requires for digital sales. That happens in the MLI Connect app, so the website is where you learn and the app is where you buy."
+        },
+        {
+          "q": "Why are there no prices here?",
+          "a": "Prices depend on your age, cover and term. MLI Connect shows an indicative premium as you choose, and the final price is confirmed after review."
+        },
+        {
+          "q": "I already have a policy. Can I use the app?",
+          "a": "Yes. Existing customers can track their policy and pay installments in MLI Connect."
+        },
+        {
+          "q": "Is the policy document the final word?",
+          "a": "Yes. The approved policy document is the only reference for terms and conditions."
+        }
+      ],
+      "cta": "Get MLI Connect"
     },
     "productPage": {
       "placeholder": "Placeholder product. Name, terms and features to be replaced with MLI's approved product data.",
@@ -421,37 +602,103 @@
         "title": "Facts You Can Check",
         "body": "No slogans. These are on the public record, and every one can be checked with the body that issued it.",
         "caption": "A Cairo street scene on a postcard, around 1903.",
-        "cols": { "year": "Year", "what": "What", "who": "Issued by", "detail": "Detail" },
+        "cols": {
+          "year": "Year",
+          "what": "What",
+          "who": "Issued by",
+          "detail": "Detail"
+        },
         "rows": [
-          { "year": "1900", "what": "Founded in Cairo", "who": "Misr Life Insurance", "detail": "125 years of service" },
-          { "year": "Licence", "what": "Licensed and supervised", "who": "Financial Regulatory Authority", "detail": "Licence No. 3" },
-          { "year": "Group", "what": "Subsidiary of Misr Insurance Holding Company", "who": "The Sovereign Fund of Egypt", "detail": "Affiliated" },
-          { "year": "2024", "what": "International creditworthiness rating", "who": "AM Best", "detail": "[Rating to be confirmed]" },
-          { "year": "2024", "what": "Integrated Life Insurance Solution", "who": "Qorus Reinvention Awards MEA", "detail": "Bronze, New Ways Of Working" },
-          { "year": "2026", "what": "Bancassurance product suite", "who": "National Bank of Egypt", "detail": "Launched January 2026" }
+          {
+            "year": "1900",
+            "what": "Founded in Cairo",
+            "who": "Misr Life Insurance",
+            "detail": "125 years of service"
+          },
+          {
+            "year": "Licence",
+            "what": "Licensed and supervised",
+            "who": "Financial Regulatory Authority",
+            "detail": "Licence No. 3"
+          },
+          {
+            "year": "Group",
+            "what": "Subsidiary of Misr Insurance Holding Company",
+            "who": "The Sovereign Fund of Egypt",
+            "detail": "Affiliated"
+          },
+          {
+            "year": "2024",
+            "what": "International creditworthiness rating",
+            "who": "AM Best",
+            "detail": "[Rating to be confirmed]"
+          },
+          {
+            "year": "2024",
+            "what": "Integrated Life Insurance Solution",
+            "who": "Qorus Reinvention Awards MEA",
+            "detail": "Bronze, New Ways Of Working"
+          },
+          {
+            "year": "2026",
+            "what": "Bancassurance product suite",
+            "who": "National Bank of Egypt",
+            "detail": "Launched January 2026"
+          }
         ],
         "source": "Sources: Misr Life public announcements on misrlife.com. To be confirmed by MLI before launch."
       },
       "stages": {
         "title": "From Download To Covered",
         "body": "Signing up is a sliver of the journey. The rest is your policy working for you, month after month.",
-        "verify": { "time": "About two minutes", "name": "Verify your ID", "body": "Scan your national ID and take a selfie, as the FRA requires for digital sales." },
-        "choose": { "time": "A few minutes", "name": "Choose your cover", "body": "Pick a plan and see an indicative price as you go." },
-        "sign": { "time": "One tap", "name": "Pay and sign", "body": "Pay, sign on screen and your policy is issued." },
-        "covered": { "time": "Every month after", "name": "Stay covered", "body": "Pay on payday, track your policy and keep your family's details up to date." }
+        "verify": {
+          "time": "About two minutes",
+          "name": "Verify your ID",
+          "body": "Scan your national ID and take a selfie, as the FRA requires for digital sales."
+        },
+        "choose": {
+          "time": "A few minutes",
+          "name": "Choose your cover",
+          "body": "Pick a plan and see an indicative price as you go."
+        },
+        "sign": {
+          "time": "One tap",
+          "name": "Pay and sign",
+          "body": "Pay, sign on screen and your policy is issued."
+        },
+        "covered": {
+          "time": "Every month after",
+          "name": "Stay covered",
+          "body": "Pay on payday, track your policy and keep your family's details up to date."
+        }
       },
       "about": {
         "facts": [
-          { "label": "Founded", "value": "1900" },
-          { "label": "Based in", "value": "Cairo, Egypt" },
-          { "label": "Part of", "value": "Misr Insurance Holding Company" },
-          { "label": "Supervised by", "value": "Financial Regulatory Authority" },
-          { "label": "Hotline", "value": "19446" }
+          {
+            "label": "Founded",
+            "value": "1900"
+          },
+          {
+            "label": "Based in",
+            "value": "Cairo, Egypt"
+          },
+          {
+            "label": "Part of",
+            "value": "Misr Insurance Holding Company"
+          },
+          {
+            "label": "Supervised by",
+            "value": "Financial Regulatory Authority"
+          },
+          {
+            "label": "Hotline",
+            "value": "19446"
+          }
         ],
         "title": "An Egyptian Insurer, For Egyptian Families",
         "body": "Misr Life Insurance has protected Egyptian families for more than a century. Today we offer savings, protection and group cover through our own branches, licensed advisers and partner banks, and now through MLI Connect, the app that lets you buy and manage a policy from your phone.",
         "more": "About Misr Life",
-        "caption": "The Nile at Cairo today.",
+        "caption": "The Nile at dusk.",
         "investorsBody": "Reports, FRA and EGX disclosures, governance and share information.",
         "partnersBody": "Distribution, bancassurance and corporate cover with Misr Life."
       }
@@ -468,12 +715,31 @@
           "We sell through our branches, licensed advisers and partner banks, and now through MLI Connect, our app for buying and managing a policy from your phone."
         ],
         "facts": [
-          { "label": "Founded", "value": "1900, Cairo" },
-          { "label": "Owner", "value": "Misr Insurance Holding Company" },
-          { "label": "Group", "value": "The Sovereign Fund of Egypt" },
-          { "label": "Regulator", "value": "Financial Regulatory Authority", "note": "Licence No. 3" },
-          { "label": "Hotline", "value": "19446" },
-          { "label": "Head office", "value": "[Address to be confirmed]" }
+          {
+            "label": "Founded",
+            "value": "1900, Cairo"
+          },
+          {
+            "label": "Owner",
+            "value": "Misr Insurance Holding Company"
+          },
+          {
+            "label": "Group",
+            "value": "The Sovereign Fund of Egypt"
+          },
+          {
+            "label": "Regulator",
+            "value": "Financial Regulatory Authority",
+            "note": "Licence No. 3"
+          },
+          {
+            "label": "Hotline",
+            "value": "19446"
+          },
+          {
+            "label": "Head office",
+            "value": "[Address to be confirmed]"
+          }
         ],
         "bandLabel": "The Nile at Cairo",
         "bandCaption": "Sailing boats on the Nile at Cairo, early twentieth century.",
@@ -500,14 +766,38 @@
         "mgmtBody": "Names, photographs and biographies will be added once approved by MLI.",
         "namePlaceholder": "[Name to be confirmed]",
         "roles": [
-          { "role": "Managing Director And CEO", "remit": "Leads the company's strategy, performance and transformation." },
-          { "role": "Deputy Managing Director", "remit": "Oversees operations, branches and customer service." },
-          { "role": "Chief Financial Officer", "remit": "Responsible for finance, reporting and investor relations." },
-          { "role": "Chief Actuary", "remit": "Product pricing, reserving and solvency." },
-          { "role": "Chief Risk Officer", "remit": "Risk management, compliance and internal control." },
-          { "role": "Chief Investment Officer", "remit": "Manages the policyholders' and shareholders' funds." },
-          { "role": "Chief Digital Officer", "remit": "MLI Connect, digital channels and technology." },
-          { "role": "Head Of Claims", "remit": "Claims handling, from first report to payment." }
+          {
+            "role": "Managing Director And CEO",
+            "remit": "Leads the company's strategy, performance and transformation."
+          },
+          {
+            "role": "Deputy Managing Director",
+            "remit": "Oversees operations, branches and customer service."
+          },
+          {
+            "role": "Chief Financial Officer",
+            "remit": "Responsible for finance, reporting and investor relations."
+          },
+          {
+            "role": "Chief Actuary",
+            "remit": "Product pricing, reserving and solvency."
+          },
+          {
+            "role": "Chief Risk Officer",
+            "remit": "Risk management, compliance and internal control."
+          },
+          {
+            "role": "Chief Investment Officer",
+            "remit": "Manages the policyholders' and shareholders' funds."
+          },
+          {
+            "role": "Chief Digital Officer",
+            "remit": "MLI Connect, digital channels and technology."
+          },
+          {
+            "role": "Head Of Claims",
+            "remit": "Claims handling, from first report to payment."
+          }
         ],
         "placeholder": "Placeholder roles based on a typical life insurer structure. To be replaced with MLI's approved organisation chart.",
         "boardTitle": "The Board Of Directors",
@@ -521,13 +811,47 @@
         "timelineBody": "The milestones below come from MLI's public record. Gaps are marked for MLI to fill with dated, sourced events.",
         "verify": "Date and wording to be confirmed by MLI.",
         "events": [
-          { "year": "1900", "title": "Founded In Cairo", "body": "Misr Life Insurance begins protecting Egyptian families." },
-          { "year": "19XX", "title": "Expansion Across Governorates", "body": "Branches open beyond Cairo and Alexandria.", "verify": true },
-          { "year": "20XX", "title": "Bank Partnerships", "body": "Policies become available through partner bank branches.", "verify": true },
-          { "year": "2024", "title": "Transformation Begins", "body": "A renewal of systems, products and service. The Integrated Life Insurance Solution wins Bronze at the Qorus Reinvention Awards MEA.", "verify": true },
-          { "year": "2024", "title": "New Partners And Branches", "body": "A distribution partnership with e& Misr, and a new branch in Mohandeseen.", "verify": true },
-          { "year": "2026", "title": "Bancassurance With NBE", "body": "The National Bank of Egypt and Misr Life launch a new bancassurance product suite and group cover for SME clients.", "verify": true },
-          { "year": "2026", "title": "MLI Connect And Listing Preparations", "body": "A new digital companion app, and preparations to list on the Egyptian Exchange.", "verify": true }
+          {
+            "year": "1900",
+            "title": "Founded In Cairo",
+            "body": "Misr Life Insurance begins protecting Egyptian families."
+          },
+          {
+            "year": "19XX",
+            "title": "Expansion Across Governorates",
+            "body": "Branches open beyond Cairo and Alexandria, closer to more families.",
+            "verify": true
+          },
+          {
+            "year": "20XX",
+            "title": "Bank Partnerships",
+            "body": "Policies become available through partner bank branches.",
+            "verify": true
+          },
+          {
+            "year": "2024",
+            "title": "Transformation Begins",
+            "body": "A renewal of systems, products and service. The Integrated Life Insurance Solution wins Bronze at the Qorus Reinvention Awards MEA.",
+            "verify": true
+          },
+          {
+            "year": "2024",
+            "title": "New Partners And Branches",
+            "body": "A distribution partnership with e& Misr, and a new branch in Mohandeseen.",
+            "verify": true
+          },
+          {
+            "year": "2026",
+            "title": "Bancassurance With NBE",
+            "body": "The National Bank of Egypt and Misr Life launch a new bancassurance product suite and group cover for SME clients.",
+            "verify": true
+          },
+          {
+            "year": "2026",
+            "title": "MLI Connect And Listing Preparations",
+            "body": "A new digital companion app, and preparations to list on the Egyptian Exchange.",
+            "verify": true
+          }
         ],
         "thenTitle": "The City We Grew Up In",
         "thenBody": "Cairo at the turn of the twentieth century, when Misr Life began. These are pictures of the city, not of the company.",
@@ -554,9 +878,21 @@
         "todayTitle": "Who We Work With Today",
         "todayBody": "Partners named here have announced their work with Misr Life publicly. Logos appear only with each partner's written approval.",
         "today": [
-          { "label": "Bancassurance", "value": "National Bank of Egypt", "note": "New product suite and SME group cover, announced January 2026" },
-          { "label": "Distribution", "value": "e& Misr", "note": "Policies marketed and distributed through e& Misr branches" },
-          { "label": "Agents", "value": "Licensed Misr Life advisers", "note": "Across Egypt's governorates" }
+          {
+            "label": "Bancassurance",
+            "value": "National Bank of Egypt",
+            "note": "New product suite and SME group cover, announced January 2026"
+          },
+          {
+            "label": "Distribution",
+            "value": "e& Misr",
+            "note": "Policies marketed and distributed through e& Misr branches"
+          },
+          {
+            "label": "Agents",
+            "value": "Licensed Misr Life advisers",
+            "note": "Across Egypt's governorates"
+          }
         ],
         "todayNote": "From Misr Life public announcements. To be confirmed by MLI before launch."
       },
@@ -571,21 +907,51 @@
           "Clear commission and reporting."
         ],
         "steps": [
-          { "name": "Introduce", "body": "We learn about your customers and channels." },
-          { "name": "Agree", "body": "Products, commission and compliance checks." },
-          { "name": "Train", "body": "Your team is trained and licensed where required." },
-          { "name": "Launch", "body": "You start selling, and we report together every month." }
+          {
+            "name": "Introduce",
+            "body": "We learn about your customers and channels."
+          },
+          {
+            "name": "Agree",
+            "body": "Products, commission and compliance checks."
+          },
+          {
+            "name": "Train",
+            "body": "Your team is trained and licensed where required."
+          },
+          {
+            "name": "Launch",
+            "body": "You start selling, and we report together every month."
+          }
         ],
         "fitTitle": "A Good Fit If You Are",
         "fit": [
-          { "label": "Brokers", "value": "Licensed insurance brokers and agencies" },
-          { "label": "Retailers", "value": "Chains with a large, loyal customer base" },
-          { "label": "Telecom and fintech", "value": "Apps and stores where customers already pay" }
+          {
+            "label": "Brokers",
+            "value": "Licensed insurance brokers and agencies"
+          },
+          {
+            "label": "Retailers",
+            "value": "Chains with a large, loyal customer base"
+          },
+          {
+            "label": "Telecom and fintech",
+            "value": "Apps and stores where customers already pay"
+          }
         ],
         "faqs": [
-          { "q": "Do my staff need a licence?", "a": "This depends on the role and FRA rules. We guide you through it." },
-          { "q": "Can customers buy on my app?", "a": "Customers complete the purchase in MLI Connect, where identity is verified. Your app hands them over with a ready link." },
-          { "q": "How is commission paid?", "a": "Terms are agreed per partner. Details to be confirmed." }
+          {
+            "q": "Do my staff need a licence?",
+            "a": "This depends on the role and FRA rules. We guide you through it."
+          },
+          {
+            "q": "Can customers buy on my app?",
+            "a": "Customers complete the purchase in MLI Connect, where identity is verified. Your app hands them over with a ready link."
+          },
+          {
+            "q": "How is commission paid?",
+            "a": "Terms are agreed per partner. Details to be confirmed."
+          }
         ]
       },
       "bank": {
@@ -599,21 +965,51 @@
           "Integration through branches, your app or APIs."
         ],
         "steps": [
-          { "name": "Scope", "body": "We map your segments, products and channels." },
-          { "name": "Design", "body": "Products and journeys shaped for your customers." },
-          { "name": "Integrate", "body": "Branch training, app links or APIs." },
-          { "name": "Run", "body": "Joint reporting, service and claims support." }
+          {
+            "name": "Scope",
+            "body": "We map your segments, products and channels."
+          },
+          {
+            "name": "Design",
+            "body": "Products and journeys shaped for your customers."
+          },
+          {
+            "name": "Integrate",
+            "body": "Branch training, app links or APIs."
+          },
+          {
+            "name": "Run",
+            "body": "Joint reporting, service and claims support."
+          }
         ],
         "fitTitle": "Built For",
         "fit": [
-          { "label": "Retail banks", "value": "Savings and protection for account holders" },
-          { "label": "Lending", "value": "Credit life on personal, auto and mortgage loans" },
-          { "label": "SME banking", "value": "Group cover for SME clients" }
+          {
+            "label": "Retail banks",
+            "value": "Savings and protection for account holders"
+          },
+          {
+            "label": "Lending",
+            "value": "Credit life on personal, auto and mortgage loans"
+          },
+          {
+            "label": "SME banking",
+            "value": "Group cover for SME clients"
+          }
         ],
         "faqs": [
-          { "q": "Who handles claims?", "a": "Misr Life, with your bank informed at every stage." },
-          { "q": "Can it be sold in our app?", "a": "Yes, through a ready link or API. Purchases complete with identity verification as the FRA requires." },
-          { "q": "Do you already work with banks?", "a": "Yes. Our bancassurance partnerships are listed on the partners overview." }
+          {
+            "q": "Who handles claims?",
+            "a": "Misr Life, with your bank informed at every stage."
+          },
+          {
+            "q": "Can it be sold in our app?",
+            "a": "Yes, through a ready link or API. Purchases complete with identity verification as the FRA requires."
+          },
+          {
+            "q": "Do you already work with banks?",
+            "a": "Yes. Our bancassurance partnerships are listed on the partners overview."
+          }
         ]
       },
       "corporate": {
@@ -627,20 +1023,47 @@
           "Claims handled with care, and reported to you."
         ],
         "steps": [
-          { "name": "Tell us", "body": "Your group size, sector and needs." },
-          { "name": "Quote", "body": "We design and price the cover." },
-          { "name": "Onboard", "body": "Member data in, policy issued." },
-          { "name": "Review", "body": "Renew every year, with joiners and leavers handled along the way." }
+          {
+            "name": "Tell us",
+            "body": "Your group size, sector and needs."
+          },
+          {
+            "name": "Quote",
+            "body": "We design and price the cover."
+          },
+          {
+            "name": "Onboard",
+            "body": "Member data in, policy issued."
+          },
+          {
+            "name": "Review",
+            "body": "Renew every year, with joiners and leavers handled along the way."
+          }
         ],
         "fitTitle": "Products For Organisations",
         "fit": [
-          { "label": "Group Life For Companies", "value": "Life cover for your whole team under one policy" },
-          { "label": "Loan And Credit Protection", "value": "Outstanding balance settled on death or disability" }
+          {
+            "label": "Group Life For Companies",
+            "value": "Life cover for your whole team under one policy"
+          },
+          {
+            "label": "Loan And Credit Protection",
+            "value": "Outstanding balance settled on death or disability"
+          }
         ],
         "faqs": [
-          { "q": "Is there a minimum group size?", "a": "To be confirmed. Small businesses are welcome to ask." },
-          { "q": "How long does a quote take?", "a": "Our team will give you a timeline once we have your details." },
-          { "q": "Can we pay monthly?", "a": "Payment terms are agreed per policy." }
+          {
+            "q": "Is there a minimum group size?",
+            "a": "To be confirmed. Small businesses are welcome to ask."
+          },
+          {
+            "q": "How long does a quote take?",
+            "a": "Our team will give you a timeline once we have your details."
+          },
+          {
+            "q": "Can we pay monthly?",
+            "a": "Payment terms are agreed per policy."
+          }
         ]
       },
       "join": {
@@ -661,19 +1084,58 @@
       "formTitle": "Leave Your Details",
       "formBody": "Tell us what you need. We reply within two working days.",
       "ways": [
-        { "label": "Hotline", "value": "19446", "href": "tel:19446", "note": "From any phone in Egypt." },
-        { "label": "Email", "value": "info@misrlife.com", "href": "mailto:info@misrlife.com", "note": "For general questions." },
-        { "label": "Claims", "value": "Report by phone first", "note": "Call the hotline as soon as you can. You can track the claim in MLI Connect." }
+        {
+          "label": "Hotline",
+          "value": "19446",
+          "href": "tel:19446",
+          "note": "From any phone in Egypt."
+        },
+        {
+          "label": "Email",
+          "value": "info@misrlife.com",
+          "href": "mailto:info@misrlife.com",
+          "note": "For general questions."
+        },
+        {
+          "label": "Claims",
+          "value": "Report by phone first",
+          "note": "Call the hotline as soon as you can. You can track the claim in MLI Connect."
+        }
       ],
       "waysNote": "Hotline and email from misrlife.com. Branch list, WhatsApp number and hours to be confirmed by MLI.",
       "appTitle": "Just Want The App?",
       "appBody": "Get the MLI Connect link on WhatsApp or by SMS. Buy, track and pay for your policy from your phone.",
       "faqTitle": "Before You Write",
       "faqs": [
-        { "q": "How do I report a claim?", "a": "Call the hotline first. You can then upload documents and track the claim's status in MLI Connect. Claims decisions are made by our claims team." },
-        { "q": "Someone called me about a policy. Are they real?", "a": "Misr Life only contacts you from official numbers. If in doubt, hang up and call 19446." },
-        { "q": "Where can I make a complaint?", "a": "Choose 'A complaint' in the form above. You can also contact the Financial Regulatory Authority." }
-      ]
+        {
+          "q": "How do I report a claim?",
+          "a": "Call the hotline first. You can then upload documents and track the claim's status in MLI Connect. Claims decisions are made by our claims team."
+        },
+        {
+          "q": "Someone called me about a policy. Are they real?",
+          "a": "Misr Life only contacts you from official numbers. If in doubt, hang up and call 19446."
+        },
+        {
+          "q": "Where can I make a complaint?",
+          "a": "Choose 'A complaint' in the form above. You can also contact the Financial Regulatory Authority."
+        }
+      ],
+      "call": "Call 19446",
+      "write": "Leave Your Details"
+    },
+    "city": {
+      "title": "Cairo, Our Home Since 1900",
+      "body": "The city and the river Misr Life has served for more than a century. These are pictures of Cairo and the Nile, not of the company or its customers."
+    },
+    "pictureCaptions": {
+      "muskistreet1900": "Muski Street, Cairo, around 1900.",
+      "cairostreet1900": "A Cairo street with mashrabiya balconies, around 1900.",
+      "nileboats1900": "Sailing boats on the Nile at Cairo, early twentieth century.",
+      "cairopostcard1903": "A Cairo street scene on a postcard, around 1903.",
+      "nileskyline": "The Nile at Cairo, with the city beyond.",
+      "nilecorniche": "River boats on the Nile in Cairo.",
+      "nilometerroda": "The Nilometer pavilion on Roda Island.",
+      "qasralnilbridge": "Qasr al-Nil Bridge and its stone lions."
     }
   },
   "ir": {
@@ -720,21 +1182,61 @@
       "glanceTitle": "At A Glance",
       "glanceBody": "The company in brief. Items marked for confirmation will be completed with MLI.",
       "glance": [
-        { "label": "Company", "value": "Misr Life Insurance" },
-        { "label": "Business", "value": "Life insurance, savings and group cover in Egypt" },
-        { "label": "Founded", "value": "1900" },
-        { "label": "Regulator", "value": "Financial Regulatory Authority", "note": "Licence No. 3" },
-        { "label": "Major shareholder", "value": "Misr Insurance Holding Company", "note": "Affiliated with The Sovereign Fund of Egypt" },
-        { "label": "Listing", "value": "Egyptian Exchange (EGX)", "note": "In preparation. Listing date to be confirmed." },
-        { "label": "External auditor", "value": "[To be confirmed]" }
+        {
+          "label": "Company",
+          "value": "Misr Life Insurance"
+        },
+        {
+          "label": "Business",
+          "value": "Life insurance, savings and group cover in Egypt"
+        },
+        {
+          "label": "Founded",
+          "value": "1900"
+        },
+        {
+          "label": "Regulator",
+          "value": "Financial Regulatory Authority",
+          "note": "Licence No. 3"
+        },
+        {
+          "label": "Major shareholder",
+          "value": "Misr Insurance Holding Company",
+          "note": "Affiliated with The Sovereign Fund of Egypt"
+        },
+        {
+          "label": "Listing",
+          "value": "Egyptian Exchange (EGX)",
+          "note": "In preparation. Listing date to be confirmed."
+        },
+        {
+          "label": "External auditor",
+          "value": "[To be confirmed]"
+        }
       ],
       "figuresTitle": "Key Figures",
       "figuresBody": "Headline figures from the latest audited statements will appear here.",
       "figures": [
-        { "label": "Total assets", "value": "EGP [XX] bn", "note": "Placeholder" },
-        { "label": "Gross written premiums", "value": "EGP [XX] bn", "note": "Placeholder" },
-        { "label": "Claims and benefits paid", "value": "EGP [XX] bn", "note": "Placeholder" },
-        { "label": "Policyholders", "value": "[XX]", "note": "Placeholder" }
+        {
+          "label": "Total assets",
+          "value": "EGP [XX] bn",
+          "note": "Placeholder"
+        },
+        {
+          "label": "Gross written premiums",
+          "value": "EGP [XX] bn",
+          "note": "Placeholder"
+        },
+        {
+          "label": "Claims and benefits paid",
+          "value": "EGP [XX] bn",
+          "note": "Placeholder"
+        },
+        {
+          "label": "Policyholders",
+          "value": "[XX]",
+          "note": "Placeholder"
+        }
       ],
       "figuresPlaceholder": "Placeholder figures. No real financial data is shown on this demo.",
       "latestTitle": "Latest Documents",
@@ -760,9 +1262,18 @@
       "title": "Financial Reports",
       "body": "Annual reports, audited and interim financial statements, and investor presentations.",
       "groups": {
-        "annual": { "title": "Annual Reports", "body": "Annual reports, audited statements and the auditor's report." },
-        "interim": { "title": "Interim Statements", "body": "Quarterly and half year financial statements." },
-        "presentations": { "title": "Presentations And Sustainability", "body": "Results presentations and the sustainability report." }
+        "annual": {
+          "title": "Annual Reports",
+          "body": "Annual reports, audited statements and the auditor's report."
+        },
+        "interim": {
+          "title": "Interim Statements",
+          "body": "Quarterly and half year financial statements."
+        },
+        "presentations": {
+          "title": "Investor Presentations",
+          "body": "Results presentations and the sustainability report."
+        }
       },
       "placeholder": "Every document on this page is a placeholder. Titles follow a typical reporting calendar for a listed Egyptian insurer."
     },
@@ -777,10 +1288,22 @@
       "policyTitle": "How We Disclose",
       "policyBody": "The principles behind every disclosure.",
       "policy": [
-        { "label": "Timing", "value": "Material information is disclosed as the FRA and EGX rules require" },
-        { "label": "Equal access", "value": "Disclosures are published to the market before they appear here" },
-        { "label": "Languages", "value": "Arabic is the official version. English is provided for convenience." },
-        { "label": "Archive", "value": "Past disclosures stay available on this page" }
+        {
+          "label": "Timing",
+          "value": "Material information is disclosed as the FRA and EGX rules require"
+        },
+        {
+          "label": "Equal access",
+          "value": "Disclosures are published to the market before they appear here"
+        },
+        {
+          "label": "Languages",
+          "value": "Arabic is the official version. English is provided for convenience."
+        },
+        {
+          "label": "Archive",
+          "value": "Past disclosures stay available on this page"
+        }
       ]
     },
     "governance": {
@@ -788,23 +1311,54 @@
       "body": "How Misr Life is directed and controlled: the board, its committees, our policies and the general assemblies.",
       "boardTitle": "Board Of Directors",
       "boardBody": "The board sets strategy and oversees management on behalf of shareholders and policyholders.",
-      "cols": { "name": "Name", "role": "Role", "type": "Membership" },
+      "cols": {
+        "name": "Name",
+        "role": "Role",
+        "type": "Membership"
+      },
       "namePlaceholder": "[Name to be confirmed]",
       "board": [
-        { "role": "Chairman", "type": "Non-executive" },
-        { "role": "Managing Director", "type": "Executive" },
-        { "role": "Board Member", "type": "Non-executive, representing the major shareholder" },
-        { "role": "Board Member", "type": "Independent" },
-        { "role": "Board Member", "type": "Independent" }
+        {
+          "role": "Chairman",
+          "type": "Non-executive"
+        },
+        {
+          "role": "Managing Director",
+          "type": "Executive"
+        },
+        {
+          "role": "Board Member",
+          "type": "Non-executive, representing the major shareholder"
+        },
+        {
+          "role": "Board Member",
+          "type": "Independent"
+        },
+        {
+          "role": "Board Member",
+          "type": "Independent"
+        }
       ],
       "boardPlaceholder": "Placeholder composition. Names and roles to be taken from the latest assembly resolution.",
       "committeesTitle": "Board Committees",
       "committeesBody": "Committees that support the board, as required by FRA governance rules.",
       "committees": [
-        { "name": "Audit Committee", "remit": "Financial reporting, internal audit and the external auditor." },
-        { "name": "Risk Committee", "remit": "Risk appetite, solvency and the risk framework." },
-        { "name": "Investment Committee", "remit": "Investment policy for policyholders' and shareholders' funds." },
-        { "name": "Nomination And Remuneration", "remit": "Board and executive appointments and pay." }
+        {
+          "name": "Audit Committee",
+          "remit": "Financial reporting, internal audit and the external auditor."
+        },
+        {
+          "name": "Risk Committee",
+          "remit": "Risk appetite, solvency and the risk framework."
+        },
+        {
+          "name": "Investment Committee",
+          "remit": "Investment policy for policyholders' and shareholders' funds."
+        },
+        {
+          "name": "Nomination And Remuneration",
+          "remit": "Board and executive appointments and pay."
+        }
       ],
       "policiesTitle": "Governing Policies",
       "policiesBody": "The charters and policies the board has approved.",
@@ -826,25 +1380,56 @@
       "factsTitle": "Share Facts",
       "factsBody": "The essentials for investors.",
       "facts": [
-        { "label": "Exchange", "value": "Egyptian Exchange (EGX)" },
-        { "label": "Ticker", "value": "[To be confirmed]" },
-        { "label": "ISIN", "value": "[To be confirmed]" },
-        { "label": "Sector", "value": "Insurance" },
-        { "label": "Shares outstanding", "value": "[To be confirmed]" },
-        { "label": "Listing date", "value": "[To be confirmed]" }
+        {
+          "label": "Exchange",
+          "value": "Egyptian Exchange (EGX)"
+        },
+        {
+          "label": "Ticker",
+          "value": "[To be confirmed]"
+        },
+        {
+          "label": "ISIN",
+          "value": "[To be confirmed]"
+        },
+        {
+          "label": "Sector",
+          "value": "Insurance"
+        },
+        {
+          "label": "Shares outstanding",
+          "value": "[To be confirmed]"
+        },
+        {
+          "label": "Listing date",
+          "value": "[To be confirmed]"
+        }
       ],
       "factsPlaceholder": "Placeholders until listing. No share data is shown on this demo.",
       "ownershipTitle": "Ownership",
       "ownershipBody": "Shareholder structure, updated after listing.",
       "ownership": [
-        { "label": "Misr Insurance Holding Company", "value": "Major shareholder", "note": "Current stake and post listing free float to be confirmed" },
-        { "label": "Free float", "value": "[To be confirmed]" }
+        {
+          "label": "Misr Insurance Holding Company",
+          "value": "Major shareholder",
+          "note": "Current stake and post listing free float to be confirmed"
+        },
+        {
+          "label": "Free float",
+          "value": "[To be confirmed]"
+        }
       ],
       "dividendsTitle": "Dividends",
       "dividendsBody": "Dividend policy and history will be published after listing.",
       "dividends": [
-        { "label": "Dividend policy", "value": "[To be confirmed]" },
-        { "label": "Dividend history", "value": "Available after listing" }
+        {
+          "label": "Dividend policy",
+          "value": "[To be confirmed]"
+        },
+        {
+          "label": "Dividend history",
+          "value": "Available after listing"
+        }
       ]
     },
     "contact": {
@@ -853,9 +1438,18 @@
       "teamTitle": "Investor Relations Team",
       "teamBody": "We aim to reply to every investor enquiry within two working days.",
       "details": [
-        { "label": "Email", "value": "[IR email to be confirmed]" },
-        { "label": "Phone", "value": "[IR phone to be confirmed]" },
-        { "label": "Address", "value": "[Head office address to be confirmed]" }
+        {
+          "label": "Email",
+          "value": "[IR email to be confirmed]"
+        },
+        {
+          "label": "Phone",
+          "value": "[IR phone to be confirmed]"
+        },
+        {
+          "label": "Address",
+          "value": "[Head office address to be confirmed]"
+        }
       ],
       "placeholder": "IR contact details to be supplied by MLI.",
       "formTitle": "Send An Enquiry",
@@ -871,7 +1465,7 @@
       "alt": "QR code that opens the MLI Connect demo",
       "title": "Scan To Get MLI Connect",
       "body": "Point your phone camera at the code to open the app.",
-      "laptop": "Or try the demo on this screen"
+      "laptop": "Try The Demo Here"
     },
     "stores": {
       "appleSmall": "Download on the",
@@ -894,7 +1488,7 @@
       "payCta": "Pay This Month"
     },
     "hero": {
-      "title": "Protection That Fits In Your Pocket",
+      "title": "Protection In Your Pocket",
       "body": "Buy, track and pay for your Misr Life policy in a few taps. No branch, no paperwork, the same company that has protected Egyptian families since 1900.",
       "demo": "Open The App Demo",
       "trust": "Licensed by the FRA. Part of Misr Life Insurance."
@@ -903,18 +1497,42 @@
       "title": "Covered Before Your Tea Gets Cold",
       "body": "Three steps, all on your phone. The identity check is the one the FRA requires for every digital sale, so it only happens once.",
       "steps": [
-        { "time": "About two minutes", "name": "Verify Your ID", "body": "Scan the front and back of your national ID, then take a quick selfie." },
-        { "time": "A few minutes", "name": "Choose Your Cover", "body": "Pick a plan, slide the cover and see an indicative price as you go." },
-        { "time": "One tap", "name": "Pay And Sign", "body": "Pay by card or wallet and sign on screen. Your policy is issued straight away." }
+        {
+          "time": "About two minutes",
+          "name": "Verify Your ID",
+          "body": "Scan the front and back of your national ID, then take a quick selfie."
+        },
+        {
+          "time": "A few minutes",
+          "name": "Choose Your Cover",
+          "body": "Pick a plan, slide the cover and see an indicative price as you go."
+        },
+        {
+          "time": "One tap",
+          "name": "Pay And Sign",
+          "body": "Pay by card or wallet and sign on screen. Your policy is issued straight away."
+        }
       ]
     },
     "teasers": {
       "title": "Start Small, Add More Later",
       "body": "Three plans to begin with. Indicative prices are inside the app, never on the website.",
       "items": [
-        { "name": "Simple Term Life", "line": "If something happens to you, your family gets a lump sum.", "tint": "mint" },
-        { "name": "Maash Bokra", "line": "Save every month for the retirement you want, with life cover built in.", "tint": "lavender" },
-        { "name": "Family Protection Plan", "line": "Bigger cover for the people who depend on you, kids' education included.", "tint": "aqua" }
+        {
+          "name": "Simple Term Life",
+          "line": "If something happens to you, your family gets a lump sum.",
+          "tint": "mint"
+        },
+        {
+          "name": "Maash Bokra",
+          "line": "Save every month for the retirement you want, with life cover built in.",
+          "tint": "lavender"
+        },
+        {
+          "name": "Family Protection Plan",
+          "line": "Bigger cover for the people who depend on you, kids' education included.",
+          "tint": "aqua"
+        }
       ],
       "see": "See in app",
       "note": "Simple Term Life and the Family Protection Plan are placeholder products for this demo."
@@ -923,21 +1541,52 @@
       "title": "There When It Counts",
       "body": "MLI Connect will not ask for your attention every day. It shows up at the moments a policy actually needs you.",
       "items": [
-        { "when": "Every month", "what": "Pay your installment on payday in one tap, with a receipt and a reminder before it is due." },
-        { "when": "Every 6 months", "what": "A quick check-in: married, new baby, new job? Your cover can keep up." },
-        { "when": "Every year", "what": "Your annual statement, renewal and a review of your beneficiaries." },
-        { "when": "If you need us", "what": "Start a claim, upload documents and follow its status. Decisions are made by our claims team." }
-      ]
+        {
+          "when": "Every month",
+          "what": "Pay your installment on payday in one tap, with a receipt and a reminder before it is due."
+        },
+        {
+          "when": "Every 6 months",
+          "what": "A quick check-in: married, new baby, new job? Your cover can keep up."
+        },
+        {
+          "when": "Every year",
+          "what": "Your annual statement, renewal and a review of your beneficiaries."
+        },
+        {
+          "when": "If you need us",
+          "what": "Start a claim, upload documents and follow its status. Decisions are made by our claims team."
+        }
+      ],
+      "caption": "The Nile at dusk."
     },
     "faq": {
       "title": "Good Questions",
       "items": [
-        { "q": "Why do I need to scan my face?", "a": "The Financial Regulatory Authority requires facial recognition for every life insurance policy sold digitally. It is also how we make sure nobody else can buy a policy in your name." },
-        { "q": "Can I buy on the website instead?", "a": "No. The website is for learning. Buying happens only in MLI Connect, where your identity can be verified." },
-        { "q": "How much does it cost?", "a": "It depends on your age, the cover and the term. The app shows an indicative premium as you choose, and the final price is confirmed after your application is reviewed." },
-        { "q": "Does the app hold my money?", "a": "No. You pay your premium to Misr Life. The goals you track in the app are for planning only." },
-        { "q": "I already have a policy. Can I use it?", "a": "Yes. You can track your policy and pay installments in the app." },
-        { "q": "Is my data safe?", "a": "Your data is encrypted and used only to verify your identity and run your policy, under Egypt's Personal Data Protection Law." }
+        {
+          "q": "Why do I need to scan my face?",
+          "a": "The Financial Regulatory Authority requires facial recognition for every life insurance policy sold digitally. It is also how we make sure nobody else can buy a policy in your name."
+        },
+        {
+          "q": "Can I buy on the website instead?",
+          "a": "No. The website is for learning. Buying happens only in MLI Connect, where your identity can be verified."
+        },
+        {
+          "q": "How much does it cost?",
+          "a": "It depends on your age, the cover and the term. The app shows an indicative premium as you choose, and the final price is confirmed after your application is reviewed."
+        },
+        {
+          "q": "Does the app hold my money?",
+          "a": "No. You pay your premium to Misr Life. The goals you track in the app are for planning only."
+        },
+        {
+          "q": "I already have a policy. Can I use it?",
+          "a": "Yes. You can track your policy and pay installments in the app."
+        },
+        {
+          "q": "Is my data safe?",
+          "a": "Your data is encrypted and used only to verify your identity and run your policy, under Egypt's Personal Data Protection Law."
+        }
       ]
     },
     "get": {
@@ -950,6 +1599,10 @@
       "parent": "Misr Life Insurance",
       "legal": "MLI Connect is the digital companion of Misr Life Insurance, a subsidiary of Misr Insurance Holding Company, licensed and supervised by the Financial Regulatory Authority under licence No. 3. Demo build: all data is mocked.",
       "top": "Back to top"
+    },
+    "same": {
+      "title": "The Same Misr Life, Since 1900",
+      "body": "MLI Connect is the new, faster face of the company that has protected Egyptian families in Cairo and across Egypt for more than a century. Same licence, same promise, now in your pocket."
     }
   }
 }

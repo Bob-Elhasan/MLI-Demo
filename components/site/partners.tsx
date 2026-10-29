@@ -2,11 +2,11 @@
 
 import Link from "next/link";
 import { useTranslations } from "next-intl";
-import { ButtonLink } from "@/components/ui/button";
+import { SiteLink } from "./button";
 import { Icon } from "@/components/ui/icon";
 import { partnersNav } from "@/lib/mock/site/nav";
 import type { PictureKey } from "@/lib/mock/site/pictures";
-import { BigList, Faq, FactRows, PageHead, Picture, PlaceholderNote, Section, SubNav, type Field } from "./blocks";
+import { BigList, CityStrip, Faq, FactRows, PageHead, PlaceholderNote, Section, SubNav, type Field } from "./blocks";
 import { IntentForm } from "./intent-form";
 import { frame, type } from "./styles";
 
@@ -19,13 +19,14 @@ function PartnersShell({ page, field, picture, children }: { page: string; field
     <>
       <PageHead title={t(`${page}.title`)} body={t(`${page}.body`)} field={field} picture={picture}>
         {page !== "join" && (
-          <ButtonLink href="/partners/become-a-partner/" size="md" className="h-14 px-7">
+          <SiteLink href="/partners/become-a-partner/">
             {t("cta")}
-          </ButtonLink>
+          </SiteLink>
         )}
       </PageHead>
       <SubNav items={partnersNav} label={t("navLabel")} />
       {children}
+      <CityStrip seed={`partners-${page}`} exclude={picture} />
     </>
   );
 }
@@ -48,7 +49,7 @@ export function PartnersOverview() {
                   className={`group grid gap-2 rounded-[var(--radius-md)] px-4 py-6 transition-colors hover:bg-paper md:grid-cols-12 md:items-baseline md:px-6 ${i % 2 === 0 ? "bg-ink/[0.04]" : ""}`}
                 >
                   <span className="text-[clamp(24px,2.6vw,36px)] leading-tight font-semibold tracking-tight md:col-span-5">{tn(l.key)}</span>
-                  <span className="text-[17px] leading-relaxed text-ink-2 md:col-span-6">{t(`paths.${l.key}`)}</span>
+                  <span className="text-[17px] leading-relaxed text-ink md:col-span-6">{t(`paths.${l.key}`)}</span>
                   <Icon name="chevron" size={22} className="hidden text-accent transition-transform group-hover:translate-x-1 md:col-span-1 md:block md:justify-self-end rtl:-scale-x-100 rtl:group-hover:-translate-x-1" />
                 </Link>
               </li>
@@ -71,14 +72,13 @@ function PartnerDetail({ page, field, picture }: { page: "distribution" | "bank"
   const tc = useTranslations("site.partners");
   const steps = t.raw("steps") as { name: string; body: string }[];
   return (
-    <PartnersShell page={page} field={field}>
+    <PartnersShell page={page} field={field} picture={picture}>
       <section aria-labelledby="offer-title" className="bg-mist">
         <div className={`${frame} grid gap-12 py-24 md:grid-cols-12 md:py-32`}>
           <div className="md:col-span-5">
             <h2 id="offer-title" data-reveal className={`${type.h2} max-w-[12ch]`}>
               {t("offerTitle")}
             </h2>
-            <Picture name={picture} className="mt-10 aspect-[4/3]" caption={tc("pictureCaption")} />
           </div>
           <div className="md:col-span-6 md:col-start-7">
             <BigList items={t.raw("offer") as string[]} />
@@ -96,7 +96,7 @@ function PartnerDetail({ page, field, picture }: { page: "distribution" | "bank"
                 <div className={`flex min-h-[88px] items-start rounded-[var(--radius-sm)] p-5 md:min-h-[140px] ${["bg-mint", "bg-aqua", "bg-icy", "bg-lavender"][i % 4]} text-ink`}>
                   <span className="text-[clamp(20px,1.8vw,26px)] leading-tight font-semibold tracking-tight">{s.name}</span>
                 </div>
-                <p className="mt-4 max-w-[30ch] text-[16px] leading-snug text-mist/85">{s.body}</p>
+                <p className="mt-4 max-w-[30ch] text-[17px] leading-snug text-mist/85">{s.body}</p>
               </li>
             ))}
           </ol>
@@ -119,14 +119,14 @@ export const PartnersCorporate = () => <PartnerDetail page="corporate" field="la
 export function PartnersJoin() {
   const t = useTranslations("site.partners.join");
   return (
-    <PartnersShell page="join" field="lilac">
+    <PartnersShell page="join" field="lilac" picture="nilecorniche">
       <section aria-labelledby="join-title" className="bg-mist">
         <div className={`${frame} grid gap-12 py-24 md:grid-cols-12 md:py-32`}>
           <div className="md:col-span-4">
             <h2 id="join-title" data-reveal className={`${type.h2} max-w-[12ch]`}>
               {t("formTitle")}
             </h2>
-            <p data-reveal style={d(1)} className={`${type.body} mt-6 text-ink-2`}>
+            <p data-reveal style={d(1)} className={`${type.body} mt-6 text-ink`}>
               {t("formBody")}
             </p>
             <div className="mt-10">

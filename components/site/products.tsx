@@ -2,10 +2,10 @@
 
 import Link from "next/link";
 import { useTranslations } from "next-intl";
-import { ButtonLink } from "@/components/ui/button";
+import { SiteLink } from "./button";
 import { Icon } from "@/components/ui/icon";
 import { getSiteProduct, siteProducts, type SiteProduct } from "@/lib/mock/site/products";
-import { BigList, Faq, FactRows, PageHead, Picture, PlaceholderNote, Section } from "./blocks";
+import { BigList, CityStrip, Faq, FactRows, PageHead, PlaceholderNote, Section } from "./blocks";
 import { ProductLineup } from "./product-lineup";
 import { frame, type } from "./styles";
 
@@ -16,7 +16,9 @@ export function ProductsIndex() {
   const channels = ["app", "adviser", "business"] as const;
   return (
     <>
-      <PageHead title={t("title")} body={t("body")} field="mint" picture="nilecorniche" />
+      <PageHead title={t("title")} body={t("body")} field="mint" picture="nilecorniche">
+        <SiteLink href="/connect/">{t("cta")}</SiteLink>
+      </PageHead>
       <Section id="lineup" title={t("lineupTitle")} intro={t("lineupBody")}>
         <ProductLineup />
       </Section>
@@ -34,10 +36,10 @@ export function ProductsIndex() {
                 className={`grid gap-4 rounded-[var(--radius-md)] px-6 py-7 md:grid-cols-12 md:items-center md:px-8 ${c === "app" ? "bg-ink text-mist" : "bg-paper"}`}
               >
                 <h3 className={`${type.h3} md:col-span-4`}>{t(`channels.${c}.title`)}</h3>
-                <p className={`${type.body} md:col-span-5 ${c === "app" ? "text-mist/85" : "text-ink-2"}`}>{t(`channels.${c}.body`)}</p>
+                <p className={`${type.body} md:col-span-5 ${c === "app" ? "text-mist/85" : "text-ink"}`}>{t(`channels.${c}.body`)}</p>
                 <Link
                   href={c === "app" ? "/connect/" : "/contact/"}
-                  className={`inline-flex items-center gap-2 text-[16px] font-semibold md:col-span-3 md:justify-self-end ${c === "app" ? "text-mint" : "text-accent"}`}
+                  className={`inline-flex items-center gap-2 text-[17px] font-semibold md:col-span-3 md:justify-self-end ${c === "app" ? "text-mint" : "text-accent"}`}
                 >
                   {t(`channels.${c}.link`)}
                   <Icon name="chevron" size={18} className="rtl:-scale-x-100" />
@@ -50,6 +52,7 @@ export function ProductsIndex() {
       <Section id="faq" title={t("faqTitle")}>
         <Faq items={t.raw("faqs") as { q: string; a: string }[]} />
       </Section>
+      <CityStrip seed="products" exclude="nilecorniche" />
     </>
   );
 }
@@ -59,24 +62,24 @@ function ProductCta({ product }: { product: SiteProduct }) {
   if (product.channel === "business") {
     return (
       <div className="flex flex-wrap gap-3">
-        <ButtonLink href="/partners/corporate/" size="md" className="h-14 px-7">
+        <SiteLink href="/partners/corporate/">
           {t("ctaBusiness")}
-        </ButtonLink>
-        <ButtonLink href="/contact/" size="md" variant="secondary" className="h-14 px-6">
+        </SiteLink>
+        <SiteLink href="/contact/" variant="quiet">
           {t("ctaContact")}
-        </ButtonLink>
+        </SiteLink>
       </div>
     );
   }
   return (
     <div className="flex flex-wrap gap-3">
-      <ButtonLink href="/connect/" size="md" className="h-14 px-7">
+      <SiteLink href="/connect/">
         {t("ctaApp")}
-      </ButtonLink>
+      </SiteLink>
       {product.channel === "adviser" && (
-        <ButtonLink href="/contact/" size="md" variant="secondary" className="h-14 px-6">
+        <SiteLink href="/contact/" variant="quiet">
           {t("ctaAdviser")}
-        </ButtonLink>
+        </SiteLink>
       )}
     </div>
   );
@@ -94,7 +97,7 @@ export function ProductDetail({ slug }: { slug: string }) {
 
   return (
     <>
-      <PageHead title={tp("name")} body={tp("line")} field={product.field}>
+      <PageHead title={tp("name")} body={tp("line")} field={product.field} picture={product.picture}>
         <ProductCta product={product} />
         {product.placeholder && (
           <div className="mt-6">
@@ -112,7 +115,6 @@ export function ProductDetail({ slug }: { slug: string }) {
             <p data-reveal style={d(1)} className={`${type.lead} mt-6 max-w-[40ch]`}>
               {tp("who")}
             </p>
-            <Picture name={product.picture} className="mt-10 aspect-[4/3]" caption={t("pictureCaption")} />
           </div>
           <div className="md:col-span-6 md:col-start-7">
             <h3 data-reveal className={`${type.h3} text-accent`}>
@@ -130,13 +132,13 @@ export function ProductDetail({ slug }: { slug: string }) {
         {isMaash && (
           <div className="mt-14">
             <h3 className={type.h3}>{tp("earlyTitle")}</h3>
-            <p className={`${type.body} mt-3 max-w-[60ch] text-ink-2`}>{tp("earlyBody")}</p>
+            <p className={`${type.body} mt-3 max-w-[60ch] text-ink`}>{tp("earlyBody")}</p>
             <div className="mt-6">
               <FactRows rows={tp.raw("early") as { label: string; value: string }[]} />
             </div>
           </div>
         )}
-        <p className="mt-8 text-[14px] leading-relaxed text-muted">{t("legal")}</p>
+        <p className="mt-8 text-[16px] leading-relaxed text-muted">{t("legal")}</p>
       </Section>
 
       {isMaash && (
@@ -161,7 +163,7 @@ export function ProductDetail({ slug }: { slug: string }) {
             <p className={`${type.lead} text-mist`}>{t(`how.${product.channel}.body`)}</p>
             <Link
               href={product.channel === "business" ? "/partners/corporate/" : "/connect/"}
-              className="mt-8 inline-flex h-14 items-center rounded-full bg-mint px-7 text-[16px] font-semibold text-ink transition hover:bg-aqua active:scale-[0.98]"
+              className="mt-8 inline-flex h-14 items-center rounded-full bg-mint px-7 text-[17px] font-semibold text-ink transition hover:bg-aqua active:scale-[0.98]"
             >
               {t(`how.${product.channel}.cta`)}
             </Link>
@@ -187,6 +189,7 @@ export function ProductDetail({ slug }: { slug: string }) {
           </ul>
         </div>
       </section>
+      <CityStrip seed={`product-${slug}`} exclude={product.picture} />
     </>
   );
 }
@@ -197,7 +200,7 @@ function OtherLink({ product }: { product: SiteProduct }) {
     <Link href={`/products/${product.slug}/`} className="group flex items-start justify-between gap-4 rounded-[var(--radius-sm)] px-3 py-4 transition-colors hover:bg-paper">
       <span>
         <span className="block text-[20px] font-semibold tracking-tight">{tp("name")}</span>
-        <span className="mt-1 block text-[15px] text-ink-2">{tp("short")}</span>
+        <span className="mt-1 block text-[16px] text-ink">{tp("short")}</span>
       </span>
       <Icon name="chevron" size={20} className="mt-1 shrink-0 text-accent transition-transform group-hover:translate-x-1 rtl:-scale-x-100 rtl:group-hover:-translate-x-1" />
     </Link>

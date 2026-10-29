@@ -10,7 +10,7 @@ export function ClosingCta() {
   const t = useTranslations("site.closing");
   return (
     <section aria-labelledby="closing-title" className="bg-ink text-mist">
-      <div className={`${frame} grid min-h-[80svh] content-between gap-16 py-24 md:py-32`}>
+      <div className={`${frame} grid content-between gap-16 py-24 md:min-h-[80svh] md:py-32`}>
         <h2 id="closing-title" data-reveal className={`${type.hero} max-w-[12ch] text-mist`}>
           <span className="block">{t("line1")}</span>
           <span className="block text-mint">{t("line2")}</span>
@@ -20,7 +20,7 @@ export function ClosingCta() {
             <p className={`${type.lead} text-mist`}>{t("body")}</p>
             <Link
               href="/connect/"
-              className="mt-8 inline-flex h-14 items-center justify-center rounded-full bg-mint px-7 text-[16px] font-semibold text-ink transition duration-200 hover:bg-aqua active:scale-[0.98]"
+              className="mt-8 inline-flex h-14 items-center justify-center rounded-full bg-mint px-7 text-[17px] font-semibold text-ink transition duration-200 hover:bg-aqua active:scale-[0.98]"
             >
               {t("cta")}
             </Link>

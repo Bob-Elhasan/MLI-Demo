@@ -4,12 +4,12 @@ import Link from "next/link";
 import { QRCodeSVG } from "qrcode.react";
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
-import { ButtonLink } from "@/components/ui/button";
+import { SiteLink } from "./button";
 import { Icon, type IconName } from "@/components/ui/icon";
 import { Wordmark } from "@/components/ui/wordmark";
 import { useReveal } from "./chrome";
 import { AppLinkForm } from "./app-link-form";
-import { Faq } from "./blocks";
+import { Clip, Faq, Picture } from "./blocks";
 import { LocaleSwitch } from "./locale-switch";
 import { frame, type } from "./styles";
 import { useLocale } from "@/lib/store/locale";
@@ -35,11 +35,10 @@ function QrCard({ url, compact = false }: { url: string; compact?: boolean }) {
       </div>
       <div>
         <p className="text-[19px] leading-tight font-semibold tracking-tight">{t("title")}</p>
-        <p className="mt-2 text-[15px] leading-relaxed text-ink-2">{t("body")}</p>
-        <Link href="/app/" className="mt-3 inline-flex items-center gap-1.5 text-[15px] font-semibold text-accent hover:text-accent-strong">
+        <p className="mt-2 text-[16px] leading-relaxed text-ink">{t("body")}</p>
+        <SiteLink href="/app/" size="sm" className="mt-4">
           {t("laptop")}
-          <Icon name="chevron" size={16} className="rtl:-scale-x-100" />
-        </Link>
+        </SiteLink>
       </div>
     </div>
   );
@@ -56,7 +55,7 @@ function StoreBadges() {
     >
       <Icon name="phone" size={26} />
       <span className="flex flex-col text-start leading-tight">
-        <span className="text-[12.5px] text-mist/80">{t(`${store}Small`)}</span>
+        <span className="text-[13px] text-mist/80">{t(`${store}Small`)}</span>
         <span className="text-[17px] font-semibold">{t(`${store}Big`)}</span>
       </span>
     </Link>
@@ -67,7 +66,7 @@ function StoreBadges() {
         {badge("apple")}
         {badge("google")}
       </div>
-      <p className="mt-3 text-[13px] text-muted">{t("note")}</p>
+      <p className="mt-3 text-[14px] text-muted">{t("note")}</p>
     </div>
   );
 }
@@ -86,16 +85,16 @@ function PolicyFragment() {
           </span>
           <span className="rounded-full bg-success-soft px-3 py-1 text-[13px] font-semibold text-success">{t("status")}</span>
         </div>
-        <p className="mt-6 text-[15px] text-muted">{t("product")}</p>
+        <p className="mt-6 text-[16px] text-muted">{t("product")}</p>
         <p className="mt-1 text-[24px] leading-tight font-semibold tracking-tight">{t("holder")}</p>
         <div className="mt-6 grid grid-cols-2 gap-3">
           <div className="rounded-2xl bg-mist p-4">
             <p className="text-[13px] text-muted">{t("nextLabel")}</p>
-            <p className="mt-1 text-[16px] font-semibold">{t("nextValue")}</p>
+            <p className="mt-1 text-[17px] font-semibold">{t("nextValue")}</p>
           </div>
           <div className="rounded-2xl bg-mist p-4">
             <p className="text-[13px] text-muted">{t("beneficiaryLabel")}</p>
-            <p className="mt-1 text-[16px] font-semibold">{t("beneficiaryValue")}</p>
+            <p className="mt-1 text-[17px] font-semibold">{t("beneficiaryValue")}</p>
           </div>
         </div>
         <div className="mt-5">
@@ -109,7 +108,7 @@ function PolicyFragment() {
             ))}
           </div>
         </div>
-        <div className="mt-6 flex h-12 items-center justify-center rounded-full bg-accent text-[15px] font-semibold text-on-accent">{t("payCta")}</div>
+        <div className="mt-6 flex h-12 items-center justify-center rounded-full bg-accent text-[16px] font-semibold text-on-accent">{t("payCta")}</div>
       </div>
       <span className="absolute -bottom-5 end-8 grid size-14 place-items-center rounded-full bg-ink text-mint shadow-lift">
         <Icon name="heart" size={24} />
@@ -120,6 +119,7 @@ function PolicyFragment() {
 
 export function ConnectPage() {
   const t = useTranslations("connect");
+  const tc = useTranslations("site.pictureCaptions");
   const locale = useLocale((s) => s.locale);
   const url = useAppUrl();
   useReveal(`connect:${locale}`);
@@ -138,7 +138,7 @@ export function ConnectPage() {
             <Wordmark product />
           </Link>
           <div className="flex items-center gap-1">
-            <Link href="/" className="hidden h-11 items-center rounded-full px-4 text-[15px] font-medium text-ink-2 hover:bg-ink/5 hover:text-ink sm:inline-flex">
+            <Link href="/" className="hidden h-11 items-center rounded-full px-4 text-[16px] font-medium text-ink hover:bg-ink/5 hover:text-ink sm:inline-flex">
               {t("nav.parent")}
             </Link>
             <LocaleSwitch />
@@ -147,7 +147,7 @@ export function ConnectPage() {
 
         <div className={`${frame} grid items-center gap-14 pt-10 pb-24 md:grid-cols-12 md:pt-16 md:pb-32`}>
           <div className="md:col-span-6">
-            <h1 className={`${type.display} max-w-[12ch]`}>
+            <h1 className={`${type.display} max-w-[15ch]`}>
               <span className="mask-line">
                 <span>{t("hero.title")}</span>
               </span>
@@ -161,12 +161,12 @@ export function ConnectPage() {
               </div>
               <div className="md:hidden">
                 <StoreBadges />
-                <ButtonLink href="/app/" size="md" className="mt-6 h-14 w-full">
+                <SiteLink href="/app/" className="mt-6 w-full">
                   {t("hero.demo")}
-                </ButtonLink>
+                </SiteLink>
               </div>
             </div>
-            <p className="fade-up mt-8 flex items-center gap-2 text-[15px] text-ink-2" style={{ "--d": "420ms" } as React.CSSProperties}>
+            <p className="fade-up mt-8 flex items-center gap-2 text-[16px] text-ink" style={{ "--d": "420ms" } as React.CSSProperties}>
               <Icon name="shieldCheck" size={18} className="shrink-0 text-accent" />
               {t("hero.trust")}
             </p>
@@ -183,7 +183,7 @@ export function ConnectPage() {
             <h2 id="how-title" data-reveal className={`${type.h2} max-w-[14ch] md:col-span-6`}>
               {t("how.title")}
             </h2>
-            <p data-reveal style={d(1)} className={`${type.body} text-ink-2 md:col-span-5 md:col-start-8`}>
+            <p data-reveal style={d(1)} className={`${type.body} text-ink md:col-span-5 md:col-start-8`}>
               {t("how.body")}
             </p>
           </div>
@@ -192,10 +192,10 @@ export function ConnectPage() {
               <li key={s.name} data-reveal style={d(i)}>
                 <div className="flex items-center gap-3 text-accent">
                   <Icon name={stepIcons[i]} size={26} />
-                  <span className="text-[15px] font-semibold">{s.time}</span>
+                  <span className="text-[16px] font-semibold">{s.time}</span>
                 </div>
                 <h3 className={`${type.h3} mt-4`}>{s.name}</h3>
-                <p className={`${type.body} mt-3 text-ink-2`}>{s.body}</p>
+                <p className={`${type.body} mt-3 text-ink`}>{s.body}</p>
               </li>
             ))}
           </ol>
@@ -208,7 +208,7 @@ export function ConnectPage() {
             <h2 id="teasers-title" data-reveal className={`${type.h2} max-w-[14ch] md:col-span-6`}>
               {t("teasers.title")}
             </h2>
-            <p data-reveal style={d(1)} className={`${type.body} text-ink-2 md:col-span-5 md:col-start-8`}>
+            <p data-reveal style={d(1)} className={`${type.body} text-ink md:col-span-5 md:col-start-8`}>
               {t("teasers.body")}
             </p>
           </div>
@@ -217,14 +217,35 @@ export function ConnectPage() {
               <li key={p.name} data-reveal style={d(i)} className={`grid gap-3 rounded-[var(--radius-lg)] px-6 py-8 md:grid-cols-12 md:items-center md:px-10 ${tints[p.tint]}`}>
                 <span className="text-[clamp(26px,3vw,42px)] leading-tight font-semibold tracking-tight md:col-span-5">{p.name}</span>
                 <span className="text-[18px] leading-relaxed md:col-span-5">{p.line}</span>
-                <Link href="/app/products/" className="inline-flex items-center gap-1.5 text-[16px] font-semibold text-accent md:col-span-2 md:justify-self-end">
+                <Link href="/app/products/" className="inline-flex items-center gap-1.5 text-[17px] font-semibold text-accent md:col-span-2 md:justify-self-end">
                   {t("teasers.see")}
                   <Icon name="chevron" size={18} className="rtl:-scale-x-100" />
                 </Link>
               </li>
             ))}
           </ul>
-          <p className="mt-6 text-[14px] text-muted">{t("teasers.note")}</p>
+          <p className="mt-6 text-[16px] text-muted">{t("teasers.note")}</p>
+        </div>
+      </section>
+
+      <section aria-labelledby="same-title" className="bg-mist">
+        <div className={`${frame} py-24 md:py-32`}>
+          <div className="grid gap-6 md:grid-cols-12">
+            <h2 id="same-title" data-reveal className={`${type.h2} max-w-[14ch] md:col-span-6`}>
+              {t("same.title")}
+            </h2>
+            <p data-reveal style={d(1)} className={`${type.body} md:col-span-5 md:col-start-8`}>
+              {t("same.body")}
+            </p>
+          </div>
+          <div className="mt-12 grid gap-6 sm:grid-cols-2">
+            <div data-reveal>
+              <Picture name="nilecorniche" className="aspect-[4/3]" caption={tc("nilecorniche")} />
+            </div>
+            <div data-reveal style={d(1)}>
+              <Picture name="qasralnilbridge" className="aspect-[4/3]" caption={tc("qasralnilbridge")} />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -237,6 +258,7 @@ export function ConnectPage() {
             <p data-reveal style={d(1)} className={`${type.body} mt-6 text-mist/85`}>
               {t("rhythm.body")}
             </p>
+            <Clip name="nileriver" className="mt-10 [&>div]:aspect-[4/3]" caption={t("rhythm.caption")} />
           </div>
           <dl className="md:col-span-6 md:col-start-7">
             {rhythm.map((r, i) => (
@@ -266,7 +288,7 @@ export function ConnectPage() {
             <h2 id="get-title" data-reveal className={`${type.h2} max-w-[13ch]`}>
               {t("get.title")}
             </h2>
-            <p data-reveal style={d(1)} className={`${type.body} mt-6 max-w-[44ch] text-ink-2`}>
+            <p data-reveal style={d(1)} className={`${type.body} mt-6 max-w-[44ch] text-ink`}>
               {t("get.body")}
             </p>
             <div data-reveal style={d(2)} className="mt-10 max-w-[460px]">
@@ -280,7 +302,7 @@ export function ConnectPage() {
           </div>
           <div data-reveal style={d(1)} className="rounded-[var(--radius-lg)] bg-paper p-6 md:col-span-5 md:col-start-8 md:p-8">
             <h3 className={type.h3}>{t("get.formTitle")}</h3>
-            <p className={`${type.body} mt-2 mb-6 text-ink-2`}>{t("get.formBody")}</p>
+            <p className={`${type.body} mt-2 mb-6 text-ink`}>{t("get.formBody")}</p>
             <AppLinkForm />
           </div>
         </div>
@@ -292,11 +314,11 @@ export function ConnectPage() {
             <Link href="/" className="text-[clamp(28px,3vw,40px)] font-semibold tracking-tight text-mint hover:text-aqua">
               {t("footer.parent")}
             </Link>
-            <p className="mt-3 max-w-[70ch] text-[14px] leading-relaxed text-mist/75">{t("footer.legal")}</p>
+            <p className="mt-3 max-w-[70ch] text-[16px] leading-relaxed text-mist/75">{t("footer.legal")}</p>
           </div>
           <div className="flex items-center gap-4">
             <LocaleSwitch tone="paper" />
-            <a href="#top" className="text-[14px] font-semibold text-mist hover:text-mint">
+            <a href="#top" className="text-[16px] font-semibold text-mist hover:text-mint">
               {t("footer.top")}
             </a>
           </div>

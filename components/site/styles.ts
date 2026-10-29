@@ -12,7 +12,7 @@ export const type = {
   h3: "text-[clamp(21px,1.8vw,26px)] leading-[1.2] tracking-[-0.01em] font-semibold",
   lead: "text-[clamp(19px,1.6vw,23px)] leading-[1.45] text-pretty",
   body: "text-[17px] leading-[1.6]",
-  small: "text-[14px] leading-[1.5]",
+  small: "text-[16px] leading-[1.5]",
 } as const;
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH || "";

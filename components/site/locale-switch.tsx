@@ -13,7 +13,7 @@ export function LocaleSwitch({ className = "", tone = "ink" }: { className?: str
       type="button"
       onClick={toggle}
       aria-label={t("switchLanguage")}
-      className={`inline-flex h-11 items-center gap-2 rounded-full px-4 text-[15px] font-semibold transition-colors ${
+      className={`inline-flex h-11 items-center gap-2 rounded-full px-4 text-[16px] font-semibold transition-colors ${
         tone === "paper" ? "text-mist hover:bg-mist/10" : "text-accent hover:bg-accent-soft"
       } ${className}`}
     >

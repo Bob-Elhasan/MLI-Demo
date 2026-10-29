@@ -21,7 +21,7 @@ export function DocTable({ docs, caption }: { docs: IrDoc[]; caption: string }) 
       <table className="w-full border-collapse text-start">
         <caption className="sr-only">{caption}</caption>
         <thead className="sr-only sm:not-sr-only">
-          <tr className="text-[14px] text-muted">
+          <tr className="text-[16px] text-muted">
             <th scope="col" className="px-4 pb-3 text-start font-medium">{t("table.document")}</th>
             <th scope="col" className="hidden px-4 pb-3 text-start font-medium sm:table-cell">{t("table.date")}</th>
             <th scope="col" className="hidden px-4 pb-3 text-start font-medium md:table-cell">{t("table.size")}</th>
@@ -37,18 +37,18 @@ export function DocTable({ docs, caption }: { docs: IrDoc[]; caption: string }) 
               <tr key={doc.id} className={i % 2 === 0 ? "bg-ink/[0.04]" : ""}>
                 <td className="rounded-s-[var(--radius-sm)] px-4 py-4 align-top">
                   <span className="block text-[17px] font-medium">{title}</span>
-                  <span className="mt-1 block text-[14px] text-muted sm:hidden">
+                  <span className="mt-1 block text-[16px] text-muted sm:hidden">
                     {formatDate(doc.date, locale)} · {size(doc.sizeKb)}
                   </span>
                 </td>
-                <td className="hidden px-4 py-4 align-top text-[16px] whitespace-nowrap text-ink-2 tabular sm:table-cell">{formatDate(doc.date, locale)}</td>
-                <td className="hidden px-4 py-4 align-top text-[16px] whitespace-nowrap text-ink-2 tabular md:table-cell">{size(doc.sizeKb)}</td>
+                <td className="hidden px-4 py-4 align-top text-[17px] whitespace-nowrap text-ink tabular sm:table-cell">{formatDate(doc.date, locale)}</td>
+                <td className="hidden px-4 py-4 align-top text-[17px] whitespace-nowrap text-ink tabular md:table-cell">{size(doc.sizeKb)}</td>
                 <td className="rounded-e-[var(--radius-sm)] px-4 py-3 text-end align-top">
                   <button
                     type="button"
                     onClick={() => setNotice(title)}
                     aria-label={t("table.downloadNamed", { title })}
-                    className="inline-flex h-10 items-center gap-2 rounded-full px-4 text-[15px] font-semibold text-accent transition-colors hover:bg-accent-soft"
+                    className="inline-flex h-10 items-center gap-2 rounded-full px-4 text-[16px] font-semibold text-accent transition-colors hover:bg-accent-soft"
                   >
                     <Icon name="doc" size={18} />
                     {t("table.pdf")}
@@ -60,7 +60,7 @@ export function DocTable({ docs, caption }: { docs: IrDoc[]; caption: string }) 
         </tbody>
       </table>
       {notice && (
-        <p role="status" className="animate-fade-in mt-4 rounded-[var(--radius-sm)] bg-warning-soft px-4 py-3 text-[15px] text-warning">
+        <p role="status" className="animate-fade-in mt-4 rounded-[var(--radius-sm)] bg-warning-soft px-4 py-3 text-[16px] text-warning">
           {t("table.placeholderNotice", { title: notice })}
         </p>
       )}

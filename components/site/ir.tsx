@@ -7,7 +7,7 @@ import { formatDate } from "@/lib/format";
 import { irNav } from "@/lib/mock/site/nav";
 import { assemblies, egxDisclosures, financialReports, fraDisclosures, irCalendar } from "@/lib/mock/site/ir";
 import { useLocale } from "@/lib/store/locale";
-import { FactRows, PageHead, PlaceholderNote, Section, SubNav, type Field } from "./blocks";
+import { CityStrip, FactRows, PageHead, PlaceholderNote, Section, SubNav, type Field } from "./blocks";
 import { DocTable } from "./doc-table";
 import { IntentForm } from "./intent-form";
 import { frame, type } from "./styles";
@@ -23,8 +23,9 @@ function IrShell({ page, field = "icy", picture, children }: { page: string; fie
       <SubNav items={irNav} label={t("navLabel")} />
       {children}
       <div className={`${frame} bg-mist pt-6 pb-20`}>
-        <p className="max-w-[80ch] text-[14px] leading-relaxed text-muted">{t("disclaimer")}</p>
+        <p className="max-w-[80ch] text-[16px] leading-relaxed text-muted">{t("disclaimer")}</p>
       </div>
+      <CityStrip seed={`ir-${page}`} exclude={picture} />
     </>
   );
 }
@@ -43,10 +44,12 @@ export function IrOverview() {
       <Section id="figures" title={t("figuresTitle")} intro={t("figuresBody")} field="paper">
         <dl className="grid gap-2 sm:grid-cols-2">
           {(t.raw("figures") as Row[]).map((f) => (
-            <div key={f.label} className="rounded-[var(--radius-md)] bg-mist p-6">
-              <dt className="text-[15px] text-muted">{f.label}</dt>
-              <dd className="mt-3 text-[clamp(32px,3.4vw,48px)] leading-none font-semibold tracking-tight tabular">{f.value}</dd>
-              {f.note && <dd className="mt-3 text-[14px] text-muted">{f.note}</dd>}
+            <div key={f.label} className="flex flex-col-reverse justify-end rounded-[var(--radius-md)] bg-mist p-6">
+              <dt className="mt-3 text-[17px] font-medium">
+                {f.label}
+                {f.note && <span className="block text-[16px] font-normal text-muted">{f.note}</span>}
+              </dt>
+              <dd className="text-[clamp(32px,3.4vw,48px)] leading-none font-semibold tracking-tight tabular">{f.value}</dd>
             </div>
           ))}
         </dl>
@@ -64,7 +67,7 @@ export function IrOverview() {
           {irCalendar.map((e, i) => (
             <li key={e.id} className={`flex flex-wrap items-baseline justify-between gap-3 rounded-[var(--radius-sm)] px-4 py-4 ${i % 2 === 0 ? "bg-paper/70" : ""}`}>
               <span className="text-[19px] font-semibold">{t(`calendar.${e.key}`)}</span>
-              <span className="text-[16px] text-ink-2 tabular">{formatDate(e.date, locale, { day: "numeric", month: "long", year: "numeric" })}</span>
+              <span className="text-[17px] text-ink tabular">{formatDate(e.date, locale, { day: "numeric", month: "long", year: "numeric" })}</span>
             </li>
           ))}
         </ul>
@@ -84,7 +87,7 @@ export function IrOverview() {
                 <Link href={l.href} className="group flex items-start justify-between gap-4 rounded-[var(--radius-sm)] px-3 py-5 transition-colors hover:bg-paper">
                   <span>
                     <span className="block text-[22px] font-semibold tracking-tight">{tn(l.key)}</span>
-                    <span className="mt-1 block text-[15px] text-ink-2">{t(`sections.${l.key}`)}</span>
+                    <span className="mt-1 block text-[16px] text-ink">{t(`sections.${l.key}`)}</span>
                   </span>
                   <Icon name="chevron" size={20} className="mt-1 shrink-0 text-accent transition-transform group-hover:translate-x-1 rtl:-scale-x-100 rtl:group-hover:-translate-x-1" />
                 </Link>
@@ -116,13 +119,13 @@ export function IrReports() {
 export function IrDisclosures() {
   const t = useTranslations("ir.disclosures");
   return (
-    <IrShell page="disclosures" field="aqua">
+    <IrShell page="disclosures" field="aqua" picture="cairopostcard1903">
       <Section id="fra" title={t("fraTitle")} intro={t("fraBody")}>
         <DocTable docs={fraDisclosures} caption={t("fraTitle")} />
       </Section>
       <Section id="egx" title={t("egxTitle")} intro={t("egxBody")} field="paper">
         <div className="mb-6 rounded-[var(--radius-md)] bg-warning-soft p-5">
-          <p className="text-[16px] leading-relaxed text-ink">{t("egxStatus")}</p>
+          <p className="text-[17px] leading-relaxed text-ink">{t("egxStatus")}</p>
         </div>
         <DocTable docs={egxDisclosures} caption={t("egxTitle")} />
       </Section>
@@ -144,7 +147,7 @@ export function IrGovernance() {
         <table className="w-full border-collapse text-start">
           <caption className="sr-only">{t("boardTitle")}</caption>
           <thead className="sr-only sm:not-sr-only">
-            <tr className="text-[14px] text-muted">
+            <tr className="text-[16px] text-muted">
               <th scope="col" className="px-4 pb-3 text-start font-medium">{t("cols.name")}</th>
               <th scope="col" className="px-4 pb-3 text-start font-medium">{t("cols.role")}</th>
               <th scope="col" className="hidden px-4 pb-3 text-start font-medium md:table-cell">{t("cols.type")}</th>
@@ -155,7 +158,7 @@ export function IrGovernance() {
               <tr key={i} className={i % 2 === 0 ? "bg-ink/[0.04]" : ""}>
                 <td className="rounded-s-[var(--radius-sm)] px-4 py-4 text-[17px] font-medium text-muted">{t("namePlaceholder")}</td>
                 <td className="px-4 py-4 text-[17px] font-medium">{m.role}</td>
-                <td className="hidden rounded-e-[var(--radius-sm)] px-4 py-4 text-[16px] text-ink-2 md:table-cell">{m.type}</td>
+                <td className="hidden rounded-e-[var(--radius-sm)] px-4 py-4 text-[17px] text-ink md:table-cell">{m.type}</td>
               </tr>
             ))}
           </tbody>
@@ -188,7 +191,7 @@ export function IrGovernance() {
           {assemblies.map((a, i) => (
             <li key={a.id} className={`grid gap-1 rounded-[var(--radius-sm)] px-4 py-4 sm:grid-cols-[1fr_auto] sm:items-baseline ${i % 2 === 0 ? "bg-paper/70" : ""}`}>
               <span className="text-[18px] font-semibold">{t(`assembly.${a.key}`, { period: a.period })}</span>
-              <span className="text-[16px] text-ink-2 tabular">{formatDate(a.date, locale, { day: "numeric", month: "long", year: "numeric" })}</span>
+              <span className="text-[17px] text-ink tabular">{formatDate(a.date, locale, { day: "numeric", month: "long", year: "numeric" })}</span>
             </li>
           ))}
         </ul>
@@ -207,12 +210,12 @@ function PricePlaceholder() {
     <div data-ui className="rounded-[var(--radius-lg)] bg-paper p-6 md:p-8">
       <div className="flex flex-wrap items-baseline justify-between gap-4">
         <div>
-          <p className="text-[15px] text-muted">{t("priceLabel")}</p>
+          <p className="text-[16px] text-muted">{t("priceLabel")}</p>
           <p className="mt-2 text-[clamp(32px,3.4vw,48px)] leading-none font-semibold tracking-tight text-muted tabular" dir="ltr">
             EGP --.--
           </p>
         </div>
-        <div className="flex gap-1 rounded-full bg-ink/5 p-1 text-[14px] font-semibold">
+        <div className="flex gap-1 rounded-full bg-ink/5 p-1 text-[16px] font-semibold">
           {["1D", "1M", "6M", "1Y"].map((r, i) => (
             <span key={r} className={`rounded-full px-3 py-1.5 ${i === 3 ? "bg-paper text-ink shadow-card" : "text-muted"}`} dir="ltr">
               {r}
@@ -224,7 +227,7 @@ function PricePlaceholder() {
         <svg viewBox="0 0 400 120" preserveAspectRatio="none" className="absolute inset-0 size-full text-line-strong" aria-hidden="true">
           <path d="M0 90 C40 85 60 70 100 72 S170 60 200 64 S270 40 300 46 S360 30 400 28" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="6 6" />
         </svg>
-        <p className="relative max-w-[34ch] px-6 text-center text-[16px] font-medium text-ink-2">{t("priceNote")}</p>
+        <p className="relative max-w-[34ch] px-6 text-center text-[17px] font-medium text-ink">{t("priceNote")}</p>
       </div>
     </div>
   );
@@ -233,7 +236,7 @@ function PricePlaceholder() {
 export function IrShare() {
   const t = useTranslations("ir.share");
   return (
-    <IrShell page="share" field="mint">
+    <IrShell page="share" field="mint" picture="nilecorniche">
       <Section id="price" title={t("priceTitle")} intro={t("priceBody")}>
         <PricePlaceholder />
       </Section>
@@ -256,7 +259,7 @@ export function IrShare() {
 export function IrContact() {
   const t = useTranslations("ir.contact");
   return (
-    <IrShell page="contact" field="lilac">
+    <IrShell page="contact" field="lilac" picture="muskistreet1900">
       <Section id="team" title={t("teamTitle")} intro={t("teamBody")}>
         <FactRows rows={t.raw("details") as Row[]} />
         <div className="mt-5">

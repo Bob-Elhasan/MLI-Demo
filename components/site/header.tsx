@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
-import { ButtonLink } from "@/components/ui/button";
+import { SiteLink } from "./button";
 import { Icon } from "@/components/ui/icon";
 import { Wordmark } from "@/components/ui/wordmark";
 import { primaryNav } from "@/lib/mock/site/nav";
@@ -40,7 +40,7 @@ export function SiteHeader() {
               key={item.href}
               href={item.href}
               aria-current={isActive(pathname, item.href) ? "page" : undefined}
-              className="rounded-full px-4 py-2 text-[15px] font-medium text-ink-2 transition-colors hover:bg-ink/5 hover:text-ink aria-[current=page]:text-accent"
+              className="rounded-full px-4 py-2 text-[16px] font-medium text-ink-2 transition-colors hover:bg-ink/5 hover:text-ink aria-[current=page]:text-accent"
             >
               {t(item.key)}
             </Link>
@@ -48,16 +48,20 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <LocaleSwitch className="hidden sm:inline-flex" />
-          <ButtonLink href="/connect/" size="md" className="hidden sm:inline-flex">
-            {t("cta")}
-          </ButtonLink>
+          <span className="hidden sm:block">
+            <LocaleSwitch />
+          </span>
+          <span className="hidden sm:block">
+            <SiteLink href="/connect/" size="sm">
+              {t("cta")}
+            </SiteLink>
+          </span>
           <button
             type="button"
             onClick={() => setOpen(true)}
             aria-expanded={open}
             aria-controls="site-menu"
-            className="inline-flex h-11 items-center gap-2 rounded-full px-4 text-[15px] font-semibold text-ink transition-colors hover:bg-ink/5 lg:hidden"
+            className="inline-flex h-11 items-center gap-2 rounded-full px-4 text-[16px] font-semibold text-ink transition-colors hover:bg-ink/5 lg:hidden"
           >
             {t("menu")}
           </button>
@@ -71,7 +75,7 @@ export function SiteHeader() {
             <button
               type="button"
               onClick={() => setOpen(false)}
-              className="inline-flex h-11 items-center gap-2 rounded-full px-4 text-[15px] font-semibold transition-colors hover:bg-ink/5"
+              className="inline-flex h-11 items-center gap-2 rounded-full px-4 text-[16px] font-semibold transition-colors hover:bg-ink/5"
             >
               <Icon name="close" size={20} />
               {t("close")}
@@ -86,7 +90,7 @@ export function SiteHeader() {
                 {item.children && (
                   <div className="mt-2 flex flex-wrap gap-x-5 gap-y-1">
                     {item.children.slice(1).map((c) => (
-                      <Link key={c.href} href={c.href} className="text-[16px] text-muted hover:text-ink">
+                      <Link key={c.href} href={c.href} className="text-[17px] text-muted hover:text-ink">
                         {t(c.key)}
                       </Link>
                     ))}
@@ -98,7 +102,7 @@ export function SiteHeader() {
               {t("contact")}
             </Link>
             <div className="mt-auto flex flex-col gap-4 pt-8">
-              <ButtonLink href="/connect/">{t("cta")}</ButtonLink>
+              <SiteLink href="/connect/" className="w-full">{t("cta")}</SiteLink>
               <LocaleSwitch className="self-center" />
             </div>
           </nav>

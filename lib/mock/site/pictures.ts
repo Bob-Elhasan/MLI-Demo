@@ -14,3 +14,21 @@ export const pictures = {
 } satisfies Record<string, SitePicture>;
 
 export type PictureKey = keyof typeof pictures;
+
+/** One moving picture: a muted loop with a poster frame */
+export const clips = {
+  nileriver: {
+    file: "nile-river.webm",
+    poster: "nile-river-poster.jpg",
+    alt: "The Nile at dusk, the camera moving slowly along the water past the riverbank",
+    width: 640,
+    height: 480,
+    title: "Nile-River2",
+    creator: "Faris El-Gwely",
+    date: "2010",
+    license: "CC BY-SA 3.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0",
+    page: "https://commons.wikimedia.org/wiki/File:Nile-River2.ogv",
+    via: "Wikimedia Commons",
+  },
+};

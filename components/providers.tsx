@@ -13,12 +13,15 @@ import { useJourney } from "@/lib/store/journey";
 type Messages = Record<string, unknown>;
 
 // Arabic copy is still pending, so any missing Arabic key falls back to English.
+// Arrays (lists of FAQs, terms, steps) are leaf values: an Arabic list replaces the English one whole.
+const isRecord = (v: unknown): v is Messages => !!v && typeof v === "object" && !Array.isArray(v);
+
 function merge(base: Messages, over: Messages): Messages {
   const out: Messages = { ...base };
   for (const [key, value] of Object.entries(over)) {
     const current = out[key];
     out[key] =
-      value && typeof value === "object" && current && typeof current === "object"
+      isRecord(value) && isRecord(current)
         ? merge(current as Messages, value as Messages)
         : value;
   }
