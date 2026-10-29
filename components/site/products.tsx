@@ -57,8 +57,12 @@ export function ProductsIndex() {
   );
 }
 
+/** Carries the product chosen on the website into /connect and on into the app's calculator */
+export const connectHref = (product: SiteProduct) => (product.appId ? `/connect/?product=${product.appId}` : "/connect/");
+
 function ProductCta({ product }: { product: SiteProduct }) {
   const t = useTranslations("site.productPage");
+  const ti = useTranslations("site.products.items");
   if (product.channel === "business") {
     return (
       <div className="flex flex-wrap gap-3">
@@ -73,8 +77,8 @@ function ProductCta({ product }: { product: SiteProduct }) {
   }
   return (
     <div className="flex flex-wrap gap-3">
-      <SiteLink href="/connect/">
-        {t("ctaApp")}
+      <SiteLink href={connectHref(product)}>
+        {product.appId ? t("ctaAppNamed", { name: ti(`${product.key}.name`) }) : t("ctaApp")}
       </SiteLink>
       {product.channel === "adviser" && (
         <SiteLink href="/contact/" variant="quiet">
@@ -162,7 +166,7 @@ export function ProductDetail({ slug }: { slug: string }) {
           <div data-reveal style={d(1)} className="md:col-span-6 md:col-start-7">
             <p className={`${type.lead} text-mist`}>{t(`how.${product.channel}.body`)}</p>
             <Link
-              href={product.channel === "business" ? "/partners/corporate/" : "/connect/"}
+              href={product.channel === "business" ? "/partners/corporate/" : connectHref(product)}
               className="mt-8 inline-flex h-14 items-center rounded-full bg-mint px-7 text-[17px] font-semibold text-ink transition hover:bg-aqua active:scale-[0.98]"
             >
               {t(`how.${product.channel}.cta`)}

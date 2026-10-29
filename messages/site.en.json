@@ -544,7 +544,7 @@
       "how": {
         "app": {
           "title": "How To Get It",
-          "body": "Download MLI Connect, verify your ID with your phone camera, choose your cover and see an indicative price. Pay, sign on screen and your policy is issued.",
+          "body": "Download MLI Connect, choose your cover and see an indicative price. When you decide to buy, verify your ID with your phone camera, pay, sign on screen and your policy is issued.",
           "cta": "Get MLI Connect"
         },
         "adviser": {
@@ -559,7 +559,8 @@
         }
       },
       "faqTitle": "Common Questions",
-      "othersTitle": "Other Products"
+      "othersTitle": "Other Products",
+      "ctaAppNamed": "Get {name} In MLI Connect"
     },
     "home": {
       "hero": {
@@ -1495,17 +1496,17 @@
     },
     "how": {
       "title": "Covered Before Your Tea Gets Cold",
-      "body": "Three steps, all on your phone. The identity check is the one the FRA requires for every digital sale, so it only happens once.",
+      "body": "Three steps, all on your phone. See your price first; the identity check the FRA requires comes only when you decide to buy.",
       "steps": [
-        {
-          "time": "About two minutes",
-          "name": "Verify Your ID",
-          "body": "Scan the front and back of your national ID, then take a quick selfie."
-        },
         {
           "time": "A few minutes",
           "name": "Choose Your Cover",
           "body": "Pick a plan, slide the cover and see an indicative price as you go."
+        },
+        {
+          "time": "About two minutes",
+          "name": "Verify Your ID",
+          "body": "Scan the front and back of your national ID, then take a quick selfie."
         },
         {
           "time": "One tap",
@@ -1538,12 +1539,12 @@
       "note": "Simple Term Life and the Family Protection Plan are placeholder products for this demo."
     },
     "rhythm": {
-      "title": "There When It Counts",
-      "body": "MLI Connect will not ask for your attention every day. It shows up at the moments a policy actually needs you.",
+      "title": "We Collect After Payday, Not Before",
+      "body": "You pick your payday and we collect two days later, so your premium never lands when money is tight. Beyond that, MLI Connect only shows up when a policy actually needs you.",
       "items": [
         {
           "when": "Every month",
-          "what": "Pay your installment on payday in one tap, with a receipt and a reminder before it is due."
+          "what": "Collected two days after your payday, paid in one tap, with a receipt and a reminder before it is due."
         },
         {
           "when": "Every 6 months",
@@ -1603,6 +1604,12 @@
     "same": {
       "title": "The Same Misr Life, Since 1900",
       "body": "MLI Connect is the new, faster face of the company that has protected Egyptian families in Cairo and across Egypt for more than a century. Same licence, same promise, now in your pocket."
+    },
+    "picked": {
+      "line": "You picked {name}. Scan the code and it opens ready in MLI Connect.",
+      "term-life": "Simple Term Life",
+      "maash-bokra": "Maash Bokra",
+      "family-protection": "Family Protection Plan"
     }
   }
 }

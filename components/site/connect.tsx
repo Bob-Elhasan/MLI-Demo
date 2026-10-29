@@ -16,14 +16,24 @@ import { useLocale } from "@/lib/store/locale";
 
 const d = (n: number) => ({ "--d": n }) as React.CSSProperties;
 
-/** The app demo URL on whatever host and base path is serving this page */
+const APP_PRODUCTS = ["term-life", "maash-bokra", "family-protection"] as const;
+type AppProduct = (typeof APP_PRODUCTS)[number];
+
+/**
+ * The app demo URL on whatever host and base path is serving this page. When the visitor arrived from a
+ * product page (?product=), the QR and demo link open that product's calculator instead of the welcome screen.
+ */
 function useAppUrl() {
   const [url, setUrl] = useState("");
+  const [product, setProduct] = useState<AppProduct>();
   useEffect(() => {
+    const picked = new URLSearchParams(window.location.search).get("product") as AppProduct | null;
+    const valid = picked && APP_PRODUCTS.includes(picked) ? picked : undefined;
+    setProduct(valid);
     const here = `${window.location.origin}${window.location.pathname}`.replace(/connect\/?$/, "");
-    setUrl(new URL("app/", here.endsWith("/") ? here : `${here}/`).href);
+    setUrl(new URL(valid ? `app/products/${valid}/` : "app/", here.endsWith("/") ? here : `${here}/`).href);
   }, []);
-  return url;
+  return { url, product };
 }
 
 function QrCard({ url, compact = false }: { url: string; compact?: boolean }) {
@@ -121,11 +131,12 @@ export function ConnectPage() {
   const t = useTranslations("connect");
   const tc = useTranslations("site.pictureCaptions");
   const locale = useLocale((s) => s.locale);
-  const url = useAppUrl();
+  const { url, product } = useAppUrl();
+  const tn = useTranslations("connect.picked");
   useReveal(`connect:${locale}`);
 
   const steps = t.raw("how.steps") as { name: string; body: string; time: string }[];
-  const stepIcons: IconName[] = ["idCard", "shield", "pen"];
+  const stepIcons: IconName[] = ["shield", "idCard", "pen"];
   const teasers = t.raw("teasers.items") as { name: string; line: string; tint: string }[];
   const tints: Record<string, string> = { mint: "bg-mint", lavender: "bg-lavender", aqua: "bg-aqua" };
   const rhythm = t.raw("rhythm.items") as { when: string; what: string }[];
@@ -155,13 +166,18 @@ export function ConnectPage() {
             <p className={`${type.lead} fade-up mt-8 max-w-[38ch]`} style={{ "--d": "240ms" } as React.CSSProperties}>
               {t("hero.body")}
             </p>
+            {product && (
+              <p className="fade-up mt-5 max-w-[42ch] rounded-[16px] bg-paper/80 px-4 py-3 text-[16px] font-medium text-ink" style={{ "--d": "300ms" } as React.CSSProperties}>
+                {tn("line", { name: tn(product) })}
+              </p>
+            )}
             <div className="fade-up mt-10" style={{ "--d": "340ms" } as React.CSSProperties}>
               <div className="hidden max-w-[460px] md:block">
                 <QrCard url={url} />
               </div>
               <div className="md:hidden">
                 <StoreBadges />
-                <SiteLink href="/app/" className="mt-6 w-full">
+                <SiteLink href={product ? `/app/products/${product}/` : "/app/"} className="mt-6 w-full">
                   {t("hero.demo")}
                 </SiteLink>
               </div>

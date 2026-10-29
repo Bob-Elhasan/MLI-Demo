@@ -39,7 +39,10 @@ export function SiteChrome({ children }: { children: React.ReactNode }) {
   const locale = useLocale((s) => s.locale);
   const t = useTranslations("site.nav");
   useReveal(`${pathname}:${locale}`);
-  useEffect(() => window.scrollTo(0, 0), [pathname]);
+  // Block body on purpose: newer Chromium returns a Promise from scrollTo, and an effect may only return a cleanup function
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   return (
     <div id="top" className="flex min-h-dvh flex-col bg-mist text-ink">

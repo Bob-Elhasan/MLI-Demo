@@ -60,7 +60,9 @@ export function Camera({
     };
   }, [mode, attempt]);
 
-  useEffect(() => onStatus?.(status), [status, onStatus]);
+  useEffect(() => {
+    onStatus?.(status);
+  }, [status, onStatus]);
 
   useImperativeHandle(ref, () => ({
     capture: () => {

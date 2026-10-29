@@ -19,15 +19,17 @@ export type SiteProduct = {
   field: "mint" | "aqua" | "icy" | "lavender" | "lilac";
   picture: PictureKey;
   placeholder: boolean;
+  /** The matching product in the MLI Connect app, so a choice made here opens there */
+  appId?: "term-life" | "maash-bokra" | "family-protection";
   /** Number of key-term rows and FAQ entries in the copy deck */
   terms: number;
   faqs: number;
 };
 
 export const siteProducts: SiteProduct[] = [
-  { slug: "maash-bokra", key: "maashBokra", audience: "individual", channel: "app", needs: ["retire"], field: "lavender", picture: "nileboats1900", placeholder: false, terms: 6, faqs: 4 },
-  { slug: "simple-term-life", key: "termLife", audience: "individual", channel: "app", needs: ["family"], field: "mint", picture: "cairostreet1900", placeholder: true, terms: 5, faqs: 3 },
-  { slug: "family-protection", key: "familyProtection", audience: "individual", channel: "app", needs: ["family", "education"], field: "aqua", picture: "nileskyline", placeholder: true, terms: 5, faqs: 3 },
+  { slug: "maash-bokra", appId: "maash-bokra", key: "maashBokra", audience: "individual", channel: "app", needs: ["retire"], field: "lavender", picture: "nileboats1900", placeholder: false, terms: 6, faqs: 4 },
+  { slug: "simple-term-life", appId: "term-life", key: "termLife", audience: "individual", channel: "app", needs: ["family"], field: "mint", picture: "cairostreet1900", placeholder: true, terms: 5, faqs: 3 },
+  { slug: "family-protection", appId: "family-protection", key: "familyProtection", audience: "individual", channel: "app", needs: ["family", "education"], field: "aqua", picture: "nileskyline", placeholder: true, terms: 5, faqs: 3 },
   { slug: "education-plan", key: "education", audience: "individual", channel: "adviser", needs: ["education"], field: "icy", picture: "muskistreet1900", placeholder: true, terms: 5, faqs: 3 },
   { slug: "loan-and-credit-protection", key: "creditLife", audience: "business", channel: "business", needs: ["business"], field: "lilac", picture: "qasralnilbridge", placeholder: true, terms: 5, faqs: 3 },
   { slug: "group-life", key: "groupLife", audience: "business", channel: "business", needs: ["business"], field: "mint", picture: "nilecorniche", placeholder: true, terms: 5, faqs: 3 },

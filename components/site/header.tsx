@@ -19,7 +19,9 @@ export function SiteHeader() {
   const pathname = usePathname() || "/";
   const [open, setOpen] = useState(false);
 
-  useEffect(() => setOpen(false), [pathname]);
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
     return () => {
