@@ -3,6 +3,7 @@
 import { usePathname } from "next/navigation";
 import { PhoneFrame } from "./phone-frame";
 import { DemoPanel } from "./demo-panel";
+import { RunOfShow } from "./run-of-show";
 
 export function AppShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -14,8 +15,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
           {children}
         </div>
       </PhoneFrame>
-      {/* Balances the panel so the phone sits dead center */}
-      <div className="hidden w-64 shrink-0 lg:block" aria-hidden="true" />
+      <RunOfShow />
     </main>
   );
 }

@@ -24,10 +24,14 @@ Working plan for the 20 Nov demo. The brief lives in `CLAUDE.md`, this file trac
 
 1. Scaffold, tokens, locale and RTL switch, phone-frame shell. **Done in slice 1**
 2. App flows 1 to 4: Onboarding, eKYC with webcam, Choose A Product, Purchase. **Done in slice 1**
-3. App flows 5 to 11: My Policy, Pay Installment, Claims, Goals, Family Vault, Life Event Check-In, Notifications.
-4. Website skeleton: Home, Products index and detail, Investor Relations (5 sub-pages), About Us, Partners, Contact.
-5. `/connect` landing page: QR on desktop, store badges on mobile, how it works, teasers, FAQ.
-6. Strategy pack: sitemap with page purposes, app journey map, brand direction, scope lock.
+3. App flows 5 to 11: My Policy, Pay Installment, Claims, Goals, Family Vault, Life Event Check-In, Notifications. **Done**
+4. Website skeleton: Home, Products index and detail, Investor Relations (5 sub-pages), About Us, Partners, Contact. **Done**
+5. `/connect` landing page: QR on desktop, store badges on mobile, how it works, teasers, FAQ. **Done**
+6. Strategy pack: sitemap with page purposes, app journey map, brand direction, scope lock. **Done**
+
+## Marketing Council
+
+Three rounds run and applied, see `docs/council/`. Open for Bobby: the expat wedge (round 3, R3-M1). Scheduled: failed-payment recovery in the error-state pass (R3-M2).
 
 ## Phase 2: 2 To 10 Nov, App Polish
 

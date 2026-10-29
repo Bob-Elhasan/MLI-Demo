@@ -117,3 +117,6 @@ Scaffold the Next.js project, set up tokens, the locale and RTL switch, and the 
 - 28 Oct: The previous single-file prototype lives at `legacy/index.html` for copy and structure reference. It is not the build.
 - 28 Oct: Static export (no server), so the same build runs on the laptop and on GitHub Pages as the backup link. Vercel is still an option.
 - 28 Oct: Locale switches client side (next-intl provider plus a Zustand store), no locale in the URL. Arabic in `messages/ar.json` is a draft for RTL testing and falls back to English per key.
+- 29 Oct: Browse first, verify last. Users see products and an indicative price before phone, OTP and eKYC; verification starts at "Choose This Cover" and the summary reprices from the ID age. (Marketing council round 1, docs/council/.)
+- 29 Oct: The app is channel-inclusive: an optional advisor or partner code at summary credits agents, banks and partners. Never frame the app as replacing agents.
+- 29 Oct: Effects must use block bodies. Newer Chromium returns a Promise from window.scrollTo, and an expression-bodied effect that returns one crashes navigation.

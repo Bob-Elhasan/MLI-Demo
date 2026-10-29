@@ -40,7 +40,53 @@
     "grace": "Missed Payment",
     "lapsed": "Policy Lapsed",
     "checkIn": "6-Month Check-In",
-    "anniversary": "Policy Anniversary"
+    "anniversary": "Policy Anniversary",
+    "run": {
+      "title": "Run Of Show",
+      "domino": "One belief to land: the app does not die after purchase, because it runs on the monthly payment pulse.",
+      "beats": {
+        "site": {
+          "title": "Trust First",
+          "line": "Since 1900, no buy button. The website informs, the app sells."
+        },
+        "product": {
+          "title": "Intent Carries Over",
+          "line": "Pick Maash Bokra here and the QR opens it ready in the app."
+        },
+        "browse": {
+          "title": "Price Before Paperwork",
+          "line": "Browse and see a real indicative price before any ID check."
+        },
+        "kyc": {
+          "title": "The FRA Moment",
+          "line": "Live webcam ID scan and selfie, only once someone decides to buy."
+        },
+        "buy": {
+          "title": "Covered In 7 Minutes",
+          "line": "Payday-aligned collection, advisor code, sign on screen, issued."
+        },
+        "pulse": {
+          "title": "The Monthly Pulse",
+          "line": "Due in 3 days, one tap with Face unlock, a streak on the receipt."
+        },
+        "grace": {
+          "title": "Lapse Is Forgetting",
+          "line": "Missed payment: still covered, one tap to catch up or reinstate."
+        },
+        "checkIn": {
+          "title": "The Cross-Sell Engine",
+          "line": "Every 6 months: anything changed? Offers come only from what they tell us."
+        },
+        "claims": {
+          "title": "Where Trust Is Made",
+          "line": "Claims tracked step by step. MLI's team decides, the app never promises."
+        },
+        "rhythm": {
+          "title": "A Pulse App, Not A Habit App",
+          "line": "Close on the Rhythm screen: everything we will ever send, and why."
+        }
+      }
+    }
   },
   "welcome": {
     "title": "Misr Life Since 1900, Now In Your Pocket",
