@@ -87,3 +87,8 @@ html[lang="ar"] .hero-waterline {
   clip-path: inset(calc(0.5 * var(--lh) * 1em + 0.1em) -0.1em -0.3em -0.1em);
   pointer-events: none;
 }
+
+/* English fallback lines inside Arabic pages keep their own word order and punctuation */
+html[lang="ar"] :is(p, dt, dd, td, h2, h3, h4, li, figcaption, summary, label) {
+  unicode-bidi: plaintext;
+}

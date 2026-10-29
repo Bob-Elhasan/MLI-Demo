@@ -38,19 +38,27 @@ export function Picture({
   caption?: string;
 }) {
   const p = pictures[name];
+  // The aspect ratio belongs to the picture's frame, so a caption sits below it instead of being clipped
+  const tokens = className.split(/\s+/).filter(Boolean);
+  const frameCls = tokens.filter((c) => c.includes("aspect-")).join(" ");
+  const figureCls = tokens.filter((c) => !c.includes("aspect-")).join(" ");
+  const img = (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src={asset(`/site/${p.file}`)}
+      width={p.width}
+      height={p.height}
+      alt={p.alt}
+      loading={priority ? "eager" : "lazy"}
+      decoding="async"
+      className={`size-full object-cover ${imgClassName}`}
+    />
+  );
+  if (!caption) return <figure className={`min-w-0 overflow-hidden ${className}`}>{img}</figure>;
   return (
-    <figure className={`min-w-0 overflow-hidden ${className}`}>
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src={asset(`/site/${p.file}`)}
-        width={p.width}
-        height={p.height}
-        alt={p.alt}
-        loading={priority ? "eager" : "lazy"}
-        decoding="async"
-        className={`size-full object-cover ${imgClassName}`}
-      />
-      {caption && <figcaption className="mt-3 text-[16px] leading-snug opacity-80">{caption}</figcaption>}
+    <figure className={`min-w-0 ${figureCls}`}>
+      <div className={`overflow-hidden ${frameCls}`}>{img}</div>
+      <figcaption className="mt-3 text-[16px] leading-snug opacity-80">{caption}</figcaption>
     </figure>
   );
 }
