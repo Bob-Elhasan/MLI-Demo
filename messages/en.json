@@ -43,11 +43,12 @@
     "anniversary": "Policy Anniversary"
   },
   "welcome": {
-    "title": "Protection That Fits In Your Pocket",
-    "body": "Buy, track and pay for your Misr Life policy in a few taps. No branch, no paperwork.",
+    "title": "Misr Life Since 1900, Now In Your Pocket",
+    "body": "Misr Life has protected Egyptian families since 1900. Now you can get covered from your phone, in about 7 minutes.",
     "cta": "Get Started",
     "secondary": "I Already Have A Policy",
-    "trust": "Licensed by the FRA. Part of Misr Life Insurance since 1900."
+    "trust": "Licensed by the FRA. Part of Misr Life Insurance since 1900.",
+    "time": "About 7 minutes from here to covered"
   },
   "onboarding": {
     "languageTitle": "Choose Your Language",
@@ -68,7 +69,8 @@
     "smsSender": "MLI Connect",
     "smsBody": "Your MLI Connect code is {code}. Never share it with anyone.",
     "smsTap": "Tap to fill",
-    "verifying": "Verifying"
+    "verifying": "Verifying",
+    "phoneBodyQuote": "Your quote is saved. Now let's confirm it's you, the FRA requires it before any online purchase."
   },
   "kyc": {
     "flow": "Verify Your Identity",
@@ -161,7 +163,10 @@
     "totalSavedHint": "Total contributions over the term. Returns are not guaranteed and are not shown.",
     "youPay": "You pay",
     "choose": "Choose This Cover",
-    "compare": "Compare Plans"
+    "compare": "Compare Plans",
+    "ageConfirm": "An estimate for now. We'll confirm your age from your ID before you pay.",
+    "incomeLabel": "Your monthly income",
+    "incomeYears": "That's about {years} years of your income for your family"
   },
   "purchase": {
     "summaryTitle": "Review Your Policy",
@@ -207,7 +212,11 @@
     "issuedBody": "Your policy is active. We've sent a copy to your phone.",
     "policyNumber": "Policy number",
     "goHome": "Go To My Policy",
-    "share": "Tell Your Family"
+    "share": "Tell Your Family",
+    "repriced": "Price confirmed for age {age}, from your ID.",
+    "advisor": "Advisor or partner code",
+    "advisorHint": "Optional. If an MLI advisor, bank or partner sent you, add their code so they get the credit.",
+    "trust": "Misr Life Insurance is licensed and supervised by the FRA. You can cancel within 15 days for a full refund."
   },
   "home": {
     "greeting": "Hi, {name}",
@@ -340,7 +349,8 @@
       "meeza": "Meeza ending 4242",
       "instapay": "InstaPay",
       "fawry": "Fawry reference"
-    }
+    },
+    "receiptFamily": "Your family is covered through {date}."
   },
   "claims": {
     "title": "Claims",
@@ -590,5 +600,13 @@
     "helpBody": "Call 19XXX or chat with us, 9am to 9pm.",
     "signOut": "Sign Out",
     "version": "MLI Connect demo build"
+  },
+  "signIn": {
+    "title": "Welcome Back",
+    "body": "Enter the mobile number on your policy. We'll send you a code.",
+    "finding": "Finding your policy",
+    "found": "We Found Your Policy",
+    "foundBody": "Linked to +20 {phone}. Your details and documents are ready.",
+    "continue": "Go To My Policy"
   }
 }

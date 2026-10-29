@@ -17,10 +17,11 @@ export default function Products() {
   const t = useTranslations("products");
   const tc = useTranslations("common");
   const locale = useLocale((s) => s.locale);
-  const age = ageFrom(useJourney((s) => s.idFields.dateOfBirth));
+  const { idFields, idConfirmed, ageGuess } = useJourney();
+  const age = idConfirmed ? ageFrom(idFields.dateOfBirth) : ageGuess;
 
   return (
-    <Screen back="/app/kyc/biometrics" title={t("title")} subtitle={t("body")}>
+    <Screen back="/app/onboarding/language" title={t("title")} subtitle={t("body")}>
       <div className="space-y-4">
         {products.map((p, i) => {
           const from = priceQuote(p, age, p.cover.min, p.term.min, p.contribution?.min).monthly;

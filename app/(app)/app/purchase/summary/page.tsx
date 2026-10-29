@@ -1,12 +1,15 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import { useEffect } from "react";
 import { Screen } from "@/components/app/screen";
 import { ButtonLink } from "@/components/ui/button";
 import { Icon } from "@/components/ui/icon";
 import { useProductName } from "@/components/app/use-product-name";
 import { formatDate, formatEGP, formatNumber, nextDateOnDay } from "@/lib/format";
 import { useJourney } from "@/lib/store/journey";
+import { ageFrom } from "@/lib/mock/kyc";
+import { getProduct, priceQuote } from "@/lib/mock/products";
 import { useLocale } from "@/lib/store/locale";
 
 const PAYDAYS = [1, 5, 10, 15, 20, 25, 27];
@@ -17,7 +20,17 @@ export default function Summary() {
   const tc = useTranslations("common");
   const locale = useLocale((s) => s.locale);
   const productName = useProductName();
-  const { quote, productId, idFields, paymentDay, set } = useJourney();
+  const { quote, productId, idFields, paymentDay, advisorCode, set } = useJourney();
+  const idAge = ageFrom(idFields.dateOfBirth);
+
+  // The browse price used the age the user dialled in; the ID age is what we sell on
+  useEffect(() => {
+    if (!quote) return;
+    const p = getProduct(quote.productId);
+    if (!p) return;
+    const q = priceQuote(p, idAge, quote.cover, quote.term, quote.contribution);
+    if (q.monthly !== quote.monthly) set({ quote: q });
+  }, [quote, idAge, set]);
 
   if (!quote) {
     return (
@@ -49,6 +62,7 @@ export default function Summary() {
           {formatEGP(quote.monthly, locale)}
           <span className="text-[15px] font-normal text-mist/70"> {tc("monthly")}</span>
         </p>
+        <p className="mt-2 text-[13px] text-mist/70">{t("repriced", { age: formatNumber(idAge, locale) })}</p>
       </div>
 
       <dl className="mt-4 overflow-hidden rounded-[20px] bg-paper shadow-card">
@@ -84,6 +98,22 @@ export default function Summary() {
           <p className="mt-1.5 text-[12px] text-muted">{t("paydayHint", { days: formatNumber(BUFFER_DAYS, locale) })}</p>
         </div>
       </section>
+
+      <label className="mt-6 block rounded-[16px] bg-paper px-4 py-3 ring-1 ring-line focus-within:ring-2 focus-within:ring-accent">
+        <span className="block text-[12px] text-muted">{t("advisor")}</span>
+        <input
+          value={advisorCode}
+          onChange={(e) => set({ advisorCode: e.target.value.toUpperCase().slice(0, 12) })}
+          dir="ltr"
+          placeholder="MLI-0000"
+          className="tabular mt-0.5 w-full bg-transparent text-[16px] font-medium outline-none placeholder:text-ink/25"
+        />
+      </label>
+      <p className="mt-2 text-[12px] leading-relaxed text-muted">{t("advisorHint")}</p>
+      <p className="mt-5 flex gap-2 text-[12px] leading-relaxed text-muted">
+        <Icon name="shieldCheck" size={16} className="mt-0.5 shrink-0 text-accent" />
+        {t("trust")}
+      </p>
     </Screen>
   );
 }

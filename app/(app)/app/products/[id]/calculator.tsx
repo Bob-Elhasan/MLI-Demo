@@ -20,8 +20,10 @@ export function Calculator({ id }: { id: string }) {
   const tc = useTranslations("common");
   const router = useRouter();
   const locale = useLocale((s) => s.locale);
-  const { idFields, quote: saved, set } = useJourney();
-  const age = ageFrom(idFields.dateOfBirth);
+  const { idFields, idConfirmed, ageGuess, quote: saved, set } = useJourney();
+  // Before the ID scan the user dials in their age; after it, the ID decides
+  const age = idConfirmed ? ageFrom(idFields.dateOfBirth) : ageGuess;
+  const [income, setIncome] = useState(15_000);
   const resume = saved?.productId === product.id ? saved : undefined;
 
   const [cover, setCover] = useState(resume?.cover ?? product.cover.default);
@@ -35,7 +37,8 @@ export function Calculator({ id }: { id: string }) {
 
   const choose = () => {
     set({ productId: product.id, quote });
-    router.push("/app/purchase/summary");
+    // Verification starts only once the user has chosen something worth protecting
+    router.push(idConfirmed ? "/app/purchase/summary" : "/app/onboarding/phone");
   };
 
   return (
@@ -71,11 +74,20 @@ export function Calculator({ id }: { id: string }) {
       <div className="space-y-6 px-6 pt-7">
         <div className="flex items-center justify-between rounded-[18px] bg-paper px-4 py-3 ring-1 ring-line">
           <span className="text-[14px] text-muted">{t("age")}</span>
-          <span className="flex items-center gap-2 text-[15px] font-semibold">
-            <span className="tabular">{formatNumber(age, locale)}</span>
-            <span className="rounded-full bg-success-soft px-2 py-0.5 text-[11px] font-semibold text-success">{t("ageFromId")}</span>
-          </span>
+          {idConfirmed ? (
+            <span className="flex items-center gap-2 text-[15px] font-semibold">
+              <span className="tabular">{formatNumber(age, locale)}</span>
+              <span className="rounded-full bg-success-soft px-2 py-0.5 text-[11px] font-semibold text-success">{t("ageFromId")}</span>
+            </span>
+          ) : (
+            <span className="flex items-center gap-1">
+              <button aria-label="-" onClick={() => set({ ageGuess: Math.max(18, age - 1) })} className="grid size-9 place-items-center rounded-full bg-fill text-[18px] font-semibold">−</button>
+              <span className="tabular w-9 text-center text-[16px] font-semibold">{formatNumber(age, locale)}</span>
+              <button aria-label="+" onClick={() => set({ ageGuess: Math.min(65, age + 1) })} className="grid size-9 place-items-center rounded-full bg-fill text-[18px] font-semibold">+</button>
+            </span>
+          )}
         </div>
+        {!idConfirmed && <p className="-mt-4 text-[12px] text-muted">{t("ageConfirm")}</p>}
 
         {savings ? (
           <Slider
@@ -86,7 +98,27 @@ export function Calculator({ id }: { id: string }) {
             onChange={setContribution}
           />
         ) : (
-          <Slider label={t("coverAmount")} value={cover} display={formatEGP(cover, locale)} {...product.cover} onChange={setCover} />
+          <>
+            <Slider label={t("coverAmount")} value={cover} display={formatEGP(cover, locale)} {...product.cover} onChange={setCover} />
+            {/* The cover number only means something in years of the user's own income */}
+            <div className="rounded-[18px] bg-paper p-4 ring-1 ring-line">
+              <p className="text-[13px] text-muted">{t("incomeLabel")}</p>
+              <div className="no-scrollbar mt-2 flex gap-1.5 overflow-x-auto">
+                {[8_000, 15_000, 25_000, 40_000].map((v) => (
+                  <button
+                    key={v}
+                    onClick={() => setIncome(v)}
+                    className={`tabular h-9 shrink-0 rounded-full px-3 text-[13px] font-semibold ${income === v ? "bg-ink text-mist" : "bg-fill text-ink-2"}`}
+                  >
+                    {formatEGP(v, locale)}
+                  </button>
+                ))}
+              </div>
+              <p className="mt-3 text-[15px] leading-snug font-semibold">
+                {t("incomeYears", { years: formatNumber(Math.round((cover / (income * 12)) * 10) / 10, locale) })}
+              </p>
+            </div>
+          </>
         )}
 
         <Slider

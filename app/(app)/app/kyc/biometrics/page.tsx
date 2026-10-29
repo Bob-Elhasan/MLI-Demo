@@ -10,14 +10,14 @@ import { useJourney } from "@/lib/store/journey";
 export default function Biometrics() {
   const t = useTranslations("kyc");
   const tc = useTranslations("common");
-  const { faceUnlock, selfie, set } = useJourney();
+  const { faceUnlock, selfie, set, quote } = useJourney();
 
   return (
     <Screen
       flow={t("flow")}
       progress={{ current: 5, total: 5 }}
       back={false}
-      footer={<ButtonLink href="/app/products">{tc("continue")}</ButtonLink>}
+      footer={<ButtonLink href={quote ? "/app/purchase/summary" : "/app/products"}>{tc("continue")}</ButtonLink>}
     >
       <div className="flex flex-col items-center pt-6 text-center">
         <div className="relative">

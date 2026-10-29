@@ -22,7 +22,7 @@ export default function Language() {
     <Screen
       title={t("languageTitle")}
       subtitle={t("languageBody")}
-      footer={<Button onClick={() => router.push("/app/onboarding/phone")}>{tc("continue")}</Button>}
+      footer={<Button onClick={() => router.push("/app/products")}>{tc("continue")}</Button>}
     >
       <div className="space-y-3" role="radiogroup">
         {options.map((o) => {

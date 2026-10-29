@@ -18,9 +18,13 @@ export default function Welcome() {
       <div className="mt-auto">
         <h1 className="text-[34px] leading-[1.08] font-semibold tracking-tight text-balance">{t("title")}</h1>
         <p className="mt-3 text-[16px] leading-relaxed text-muted text-pretty">{t("body")}</p>
-        <div className="mt-7 space-y-3">
+        <p className="mt-4 flex items-center gap-2 text-[14px] font-semibold text-accent-strong">
+          <Icon name="calendar" size={17} />
+          {t("time")}
+        </p>
+        <div className="mt-6 space-y-3">
           <ButtonLink href="/app/onboarding/language">{t("cta")}</ButtonLink>
-          <ButtonLink href="/app/onboarding/language" variant="ghost" className="h-11">
+          <ButtonLink href="/app/sign-in" variant="ghost" className="h-11">
             {t("secondary")}
           </ButtonLink>
         </div>

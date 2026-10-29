@@ -17,6 +17,7 @@ export default function Phone() {
   const router = useRouter();
   const stored = useJourney((s) => s.phone);
   const set = useJourney((s) => s.set);
+  const hasQuote = useJourney((s) => !!s.quote);
   const [phone, setPhone] = useState(stored);
   const [touched, setTouched] = useState(false);
   const ok = valid(phone);
@@ -32,7 +33,7 @@ export default function Phone() {
     <Screen
       flow={t("phoneLabel")}
       title={t("phoneTitle")}
-      subtitle={t("phoneBody")}
+      subtitle={hasQuote ? t("phoneBodyQuote") : t("phoneBody")}
       footer={
         <>
           <p className="text-center text-[12px] leading-relaxed text-muted">{t("phoneTerms")}</p>

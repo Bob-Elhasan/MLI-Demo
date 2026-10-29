@@ -35,6 +35,9 @@ export default function Receipt() {
           <Icon name="check" size={38} strokeWidth={2.6} />
         </span>
         <h1 className="mt-6 text-[28px] font-semibold tracking-tight">{reinstated ? t("receiptReinstated") : t("receiptTitle")}</h1>
+        <p className="mt-3 text-[18px] font-semibold text-accent-strong">
+          {t("receiptFamily", { date: formatDate(nextDate, locale, { day: "numeric", month: "long" }) })}
+        </p>
         <p className="mt-2 max-w-[290px] text-[15px] leading-relaxed text-muted">
           {t("receiptBody", { date: formatDate(nextDate, locale, { day: "numeric", month: "long" }) })}
         </p>

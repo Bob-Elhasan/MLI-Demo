@@ -76,6 +76,10 @@ type JourneyState = Captures & {
   lastCheckIn?: string;
   readNotifications: string[];
   weeklyGoalNudge: boolean;
+  /** Age the user dials in before the ID scan; the ID age replaces it at summary */
+  ageGuess: number;
+  /** Optional advisor or partner code, so the app credits whoever brought the customer */
+  advisorCode: string;
 
   set: (patch: Partial<JourneyState>) => void;
   capture: (key: keyof Captures, dataUrl: string) => void;
@@ -122,6 +126,8 @@ const initial = {
   lastCheckIn: undefined,
   readNotifications: [] as string[],
   weeklyGoalNudge: false,
+  ageGuess: 30,
+  advisorCode: "",
 };
 
 export const useJourney = create<JourneyState>()(

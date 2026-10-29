@@ -128,8 +128,9 @@ function Showcase() {
   const t = useTranslations("site.home.showcase");
   const specimen = (word: string, caption: string, inverse: boolean) => (
     <figure>
-      <div aria-hidden="true" className={`h-[calc(24vw*0.62)] overflow-hidden md:h-[calc(13vw*0.62)] ${inverse ? "max-md:bg-ink max-md:px-3 max-md:text-mist" : ""}`}>
-        <span className="block text-[24vw] leading-[0.8] font-semibold tracking-[-0.05em] whitespace-nowrap md:text-[13vw]">{word}</span>
+      <div aria-hidden="true" className={inverse ? "max-md:bg-ink max-md:px-3 max-md:py-2 max-md:text-mist" : ""}>
+        {/* Shown whole: a cropped word read as a rendering bug, and would slice Arabic letterforms */}
+        <span className="block text-[22vw] leading-[1.05] font-semibold tracking-[-0.04em] whitespace-nowrap md:text-[12vw]">{word}</span>
       </div>
       <figcaption className={`${type.body} mt-4 font-medium`}>{caption}</figcaption>
     </figure>
