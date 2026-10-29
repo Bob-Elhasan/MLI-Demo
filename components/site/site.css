@@ -1,0 +1,71 @@
+/* Website and /connect motion and type helpers. Colours come from the tokens in app/globals.css. */
+
+/* Arabic is cursive: never letter-space it, and give it room for dots above and below */
+html[lang="ar"] [class*="tracking-"] {
+  letter-spacing: 0 !important;
+}
+html[lang="ar"] .display {
+  line-height: 1.18 !important;
+}
+
+/* Masked headline: each line rises from behind its own baseline */
+.mask-line {
+  display: block;
+  overflow: hidden;
+  padding-block: 0.06em 0.1em;
+  margin-block: -0.06em -0.1em;
+}
+.mask-line > span {
+  display: block;
+  animation: site-rise 900ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: var(--d, 0ms);
+}
+.fade-up {
+  animation: site-fade-up 700ms cubic-bezier(0.22, 0.9, 0.24, 1) both;
+  animation-delay: var(--d, 0ms);
+}
+@keyframes site-rise {
+  from { transform: translateY(108%); }
+  to { transform: none; }
+}
+@keyframes site-fade-up {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* Section entrances. Only armed once script runs, so content never stays hidden without it */
+.js-reveal [data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 700ms cubic-bezier(0.22, 0.9, 0.24, 1),
+    transform 700ms cubic-bezier(0.22, 0.9, 0.24, 1);
+  transition-delay: calc(var(--d, 0) * 80ms);
+}
+.js-reveal [data-reveal].is-in {
+  opacity: 1;
+  transform: none;
+}
+
+/* One moving picture: a slow drift on the river band */
+.drift {
+  animation: site-drift 26s ease-in-out infinite alternate;
+  transform-origin: 50% 60%;
+}
+@keyframes site-drift {
+  from { transform: scale(1.04); }
+  to { transform: scale(1.12) translateX(-1.5%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mask-line > span,
+  .fade-up,
+  .drift {
+    animation: none;
+  }
+  .js-reveal [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
