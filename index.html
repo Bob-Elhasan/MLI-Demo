@@ -709,14 +709,13 @@
       <linearGradient id="${id}s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c7daf3"/><stop offset=".6" stop-color="#f7f1e6"/><stop offset="1" stop-color="#ffc3a6"/></linearGradient>
       <clipPath id="${id}c"><rect x="14" y="14" width="172" height="312" rx="86"/></clipPath></defs>
       <rect x="14" y="14" width="172" height="312" rx="86" fill="url(#${id}s)"/>
-      <g clip-path="url(#${id}c)"><g class="a-city">
-        <circle cx="138" cy="222" r="24" fill="#ff8048" opacity=".85"/>
-        <path fill="#6a96cf" d="M14 250h22v-30h18v30h16v-46h12v46h20v-22h26v22h18v-40h14v40h40v90H14z" opacity=".55"/>
-        <path fill="#0d1a33" d="M58 92l6-22 6 22v6h-3v40h4v8h-4v66h4v8h-4v62h-10V222h-4v-8h4v-66h-4v-8h4V98h-3z"/>
-        <path fill="#0d1a33" d="M146 132l5-17 5 17v5h-3v30h3v7h-3v48h-7v-48h-3v-7h3v-30h-3z"/>
-        <path fill="#0d1a33" d="M88 236a32 32 0 0 1 64 0v8H88z"/><rect x="116" y="194" width="8" height="12" fill="#0d1a33"/>
-        <path fill="#0d1a33" d="M14 262h12v-8h10v8h12v-8h10v8h12v-8h10v8h12v-8h10v8h12v-8h10v8h12v-8h10v8h12v-8h10v8h12v-8h8v78H14z"/>
-        <g fill="#f7f1e6" opacity=".9"><path d="M40 300v-14a6 6 0 0 1 12 0v14z"/><path d="M70 300v-14a6 6 0 0 1 12 0v14z"/><path d="M118 300v-14a6 6 0 0 1 12 0v14z"/><path d="M148 300v-14a6 6 0 0 1 12 0v14z"/></g>
+      <g clip-path="url(#${id}c)"><g class="a-city" fill="none">
+        <circle cx="100" cy="250" r="30" fill="#ff8048" opacity=".85" stroke="none"/>
+        <rect x="44" y="96" width="112" height="300" rx="56" fill="#6a96cf" opacity=".22"/>
+        <rect x="70" y="150" width="60" height="240" rx="30" fill="#3a5e8f" opacity=".3"/>
+        <rect x="32" y="70" width="136" height="330" rx="68" stroke="#ffffff" stroke-opacity=".7" stroke-width="1.6"/>
+        <path d="M14 300a86 86 0 0 1 172 0" stroke="#ff8048" stroke-width="2" stroke-opacity=".6"/>
+        <path d="M30 322a70 70 0 0 1 140 0" stroke="#3a5e8f" stroke-width="2" stroke-opacity=".45"/>
       </g></g>
       <rect class="a-frame" x="14" y="14" width="172" height="312" rx="86" fill="none" stroke="url(#${id}f)" stroke-width="9" pathLength="1"/></svg>`}const stile=(icon,c1,c2)=>`<span class="stile" style="--c1:${c1||"var(--dusk-600)"};--c2:${c2||"var(--sunset-200)"}" aria-hidden="true">${I(icon)}</span>`,NAME=()=>L("مصر لتأمينات الحياة","Misr Life Insurance");let LOGO_SRC=null;const logoSrc=()=>{if(LOGO_SRC===null){const d=document.createElement("div");try{d.innerHTML=window.header("home")}catch{}const im=d.querySelector("a.logo img");LOGO_SRC=im?im.getAttribute("src"):""}return LOGO_SRC},logo=()=>`<a class="logo" href="#/home" aria-label="${esc(L("مصر لتأمينات الحياة، الرئيسية","Misr Life Insurance, home"))}"><img src="${logoSrc()}" alt="${esc(NAME())}"></a>`,NAV=()=>[[L("المنتجات","Products"),"#/products"],[L("الخدمات","Services"),"#/services"],[L("المستثمرون","Investors"),"#/investors"],[L("عن الشركة","About"),"#/about"],["MLI Connect","#/connect"]];function header2(r){return`<header class="nav" id="n2nav"><div class="nav-in">${logo()}
       <ul>${NAV().map(([t,h])=>`<li><a href="${h}"${h==="#/"+r?' aria-current="page"':""}>${t}</a></li>`).join("")}</ul>
