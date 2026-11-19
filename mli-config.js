@@ -26,7 +26,12 @@ window.MLI_CONFIG = {
   googleClientId: '',          // Google Identity Services client ID; empty keeps Google sign-in in demo mode
   recaptchaSiteKey: '',        // reCAPTCHA v3 site key for public forms; empty turns it off
 
-  payment: { returnPath: '#/buy/result' }  // the gateway sends the customer back here with ?order=<id>
+  payment: { returnPath: '#/buy/result' },  // the gateway sends the customer back here with ?order=<id>
+
+  /* Static hosting with GitHub as the content store (mock mode only, see CMS.md "Publishing to GitHub").
+     The site reads content/published.json at boot; Content Studio publishes to this repository once an editor connects
+     a fine-grained token. boot: false turns the boot fetch off. */
+  github: { owner: 'Bob-Elhasan', repo: 'MLI-Demo', branch: 'main', dir: 'content', boot: true }
 };
 
 /* Ready-made setups (copy one over the values above):
